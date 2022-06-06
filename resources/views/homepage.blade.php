@@ -10,16 +10,16 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
-    <div class='col-md-3 .col-md-offset-3'>
+    <div class='container text-center'>
         <h1>
             Eatomizer
         </h1>
     </div>
-    <div>
+    <div class='container text-center'>
         Don't know what to eat? , let us decide it for you
     </div>
-    <div>
-        <button>Random</button>
+    <div class='container text-center'>
+        <button type="button" class="btn btn-primary rounded-pill">Random</button>
     </div>
 </body>
 </html>
