@@ -14,7 +14,8 @@ class CuisineController extends Controller
      */
     public function index()
     {
-        //
+        $cuisine = Cuisine::All();
+        return $cuisine;
     }
 
     /**
@@ -35,7 +36,11 @@ class CuisineController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $cuisine = new Cuisine();
+        $cuisine->nameTH = $request->input('nameTH');
+        $cuisine->nameEN = $request->input('nameEn');
+        $cuisine->nationality = $request->input('nationality');
+        $cuisine->description = $request->input('description');
     }
 
     /**
