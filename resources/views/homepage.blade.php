@@ -20,9 +20,41 @@
     </div>
     <div class="d-flex align-items-center justify-content-center" style="height: 50
     px;">
-        <button type="button" class="btn btn-primary rounded-pill">Random</button>
+        <button onclick="click()" type="button" id="randomBtn" class="btn btn-primary rounded-pill">Random</button>
     </div>
     <div>
     </div>
 </body>
 </html>
+<script>
+    // export default{
+    //     data(){
+    //         return{
+    //             click: false,
+    //             cuisine: []
+    //         }
+    //     },
+
+    //     mounted(){
+    //         this.fetch();
+    //     },
+
+    //     async fetch(){
+    //         let res = await Axios.get(`/cuisine`);
+    //         this.cuisines = res.data;
+    //     },
+    //     click(){
+    //         click = true;
+    //     },
+    //     checkClick(){
+    //         if(click){
+    //             return true;
+    //             console.log("click");
+    //         }
+    //     }
+    // }
+    function click(){
+        click = true;
+        console.log("click");
+    }
+</script>
