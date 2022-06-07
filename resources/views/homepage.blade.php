@@ -18,8 +18,11 @@
     <div class='container text-center'>
         Don't know what to eat? , let us decide it for you
     </div>
-    <div class='container text-center'>
+    <div class="d-flex align-items-center justify-content-center" style="height: 50
+    px;">
         <button type="button" class="btn btn-primary rounded-pill">Random</button>
+    </div>
+    <div>
     </div>
 </body>
 </html>

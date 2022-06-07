@@ -20,10 +20,6 @@ class CreateCuisinesTable extends Migration
             $table->string('nationality');
             $table->longText('description');
             $table->string('path');
-            $table->string('type');
-            $table->integer('size');
-            $table->integer('width');
-            $table->integer('height');
             $table->timestamps();
             $table->softDeletes();
         });
