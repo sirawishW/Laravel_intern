@@ -23,7 +23,12 @@
     </div>
     <div class="d-flex align-items-center justify-content-center" style="height: 50px;">
         <button type="button" id="randomBtn" class="btn btn-primary rounded-pill">
-            <a href="cuisine.all-cuisine">All Cuisine</a>
+            Add
+        </button>
+    </div>
+    <div class="d-flex align-items-center justify-content-center" style="height: 50px;">
+        <button type="button" id="randomBtn" class="btn btn-primary rounded-pill">
+            <a href="{{ route('cuisine.index') }}">All Cuisine</a>
         </button>
     </div>
 </body>

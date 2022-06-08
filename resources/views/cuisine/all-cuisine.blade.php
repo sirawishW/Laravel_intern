@@ -20,7 +20,7 @@
                 @foreach($cuisines as $cuisine)
                     <tr>
                         <td>
-                            <a href="{{ route('cuisine.show') }}">
+                            <a>
                                 {{ $cuisine->nameTH }}
                             </a>
                         </td>

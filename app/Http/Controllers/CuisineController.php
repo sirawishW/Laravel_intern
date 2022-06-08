@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cuisine;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\FuncCall;
 
 class CuisineController extends Controller
 {
@@ -14,8 +15,10 @@ class CuisineController extends Controller
      */
     public function index()
     {
-        $cuisine = Cuisine::All();
-        return $cuisine;
+        $cuisines = Cuisine::All();
+        return view('cuisine.all-cuisine', [
+            'cuisines' => $cuisines
+        ]);
     }
 
     /**
@@ -86,5 +89,8 @@ class CuisineController extends Controller
     public function destroy(Cuisine $cuisine)
     {
         //
+    }
+    public function showall(){
+        return view('cuisine.all-cuisine');
     }
 }
