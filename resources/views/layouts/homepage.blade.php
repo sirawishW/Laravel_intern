@@ -18,41 +18,17 @@
     <div class='container text-center'>
         Don't know what to eat? , let us decide it for you
     </div>
-    <div class="d-flex align-items-center justify-content-center" style="height: 50
-    px;">
+    <div class="d-flex align-items-center justify-content-center" style="height: 50px;">
         <button onclick="click()" type="button" id="randomBtn" class="btn btn-primary rounded-pill">Random</button>
     </div>
-    <div>
+    <div class="d-flex align-items-center justify-content-center" style="height: 50px;">
+        <button type="button" id="randomBtn" class="btn btn-primary rounded-pill">
+            <a href="cuisine.all-cuisine">All Cuisine</a>
+        </button>
     </div>
 </body>
 </html>
 <script>
-    // export default{
-    //     data(){
-    //         return{
-    //             click: false,
-    //             cuisine: []
-    //         }
-    //     },
-
-    //     mounted(){
-    //         this.fetch();
-    //     },
-
-    //     async fetch(){
-    //         let res = await Axios.get(`/cuisine`);
-    //         this.cuisines = res.data;
-    //     },
-    //     click(){
-    //         click = true;
-    //     },
-    //     checkClick(){
-    //         if(click){
-    //             return true;
-    //             console.log("click");
-    //         }
-    //     }
-    // }
     function click(){
         click = true;
         console.log("click");

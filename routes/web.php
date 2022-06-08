@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('homepage');
+    return view('layouts.homepage');
 });
+
+Route::resource('cuisines', \App\Http\Controllers\CuisineController::class);
