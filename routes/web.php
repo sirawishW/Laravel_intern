@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CuisineController;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +16,5 @@ use App\Http\Controllers\CuisineController;
 Route::get('/', function () {
     return view('layouts.homepage');
 });
-
-Route::get("cuisine", [CuisineController::class, 'showall']);
 
 Route::resource('cuisine', \App\Http\Controllers\CuisineController::class);

@@ -19,7 +19,7 @@
         Don't know what to eat? , let us decide it for you
     </div>
     <div class="d-flex align-items-center justify-content-center" style="height: 50px;">
-        <button onclick="click()" type="button" id="randomBtn" class="btn btn-primary rounded-pill">Random</button>
+        <button type="button" id="randomBtn" class="btn btn-primary rounded-pill">Random</button>
     </div>
     <div class="d-flex align-items-center justify-content-center" style="height: 50px;">
         <button type="button" id="randomBtn" class="btn btn-primary rounded-pill">
@@ -28,14 +28,11 @@
     </div>
     <div class="d-flex align-items-center justify-content-center" style="height: 50px;">
         <button type="button" id="randomBtn" class="btn btn-primary rounded-pill">
-            <a href="{{ route('cuisine.index') }}">All Cuisine</a>
+            <a href="{{ route('cuisine.index') }}" class="text-white">All Cuisine</a>
         </button>
     </div>
 </body>
 </html>
 <script>
-    function click(){
-        click = true;
-        console.log("click");
-    }
+
 </script>

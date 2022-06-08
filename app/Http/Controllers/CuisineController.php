@@ -52,9 +52,12 @@ class CuisineController extends Controller
      * @param  \App\Models\Cuisine  $cuisine
      * @return \Illuminate\Http\Response
      */
-    public function show(Cuisine $cuisine)
+    public function show($id)
     {
-        //
+        $cuisine = Cuisine::findOrFail($id);
+        return view('cuisine.display', [
+            'cuisine' => $cuisine
+        ]);
     }
 
     /**

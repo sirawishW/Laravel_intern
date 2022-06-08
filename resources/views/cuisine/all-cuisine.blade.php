@@ -2,12 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+    <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
-<table class="table border-grey-200">
+    <div>
+        <table class="table border-grey-200">
             <thead>
                 <tr>
                     <th>Name(TH)</th>
@@ -20,12 +24,14 @@
                 @foreach($cuisines as $cuisine)
                     <tr>
                         <td>
-                            <a>
+                            <a href="{{ route('cuisine.show', ['cuisine' => $cuisine->id]) }}">
                                 {{ $cuisine->nameTH }}
                             </a>
                         </td>
                         <td>
-                            {{ $cuisine->nameEN }}
+                            <a href="{{ route('cuisine.show', ['cuisine' => $cuisine->id]) }}">
+                                {{ $cuisine->nameEN }}
+                            </a>
                         </td>
                         <td>
                             {{ $cuisine->nationality }}
@@ -37,5 +43,12 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
+        <div class="d-flex align-items-center justify-content-center" style="height: 100px;">
+            <button type="button" id="randomBtn" class="btn btn-primary rounded-pill">
+                Add
+            </button>
+        </div>
+    </div>
 </body>
 </html>
