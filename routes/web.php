@@ -17,4 +17,4 @@ Route::get('/', function () {
     return view('layouts.homepage');
 });
 
-Route::resource('cuisine', \App\Http\Controllers\CuisineController::class);
+Route::resource('cuisines', \App\Http\Controllers\CuisineController::class);

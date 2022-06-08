@@ -22,13 +22,13 @@
         <button type="button" id="randomBtn" class="btn btn-primary rounded-pill">Random</button>
     </div>
     <div class="d-flex align-items-center justify-content-center" style="height: 50px;">
-        <button type="button" id="randomBtn" class="btn btn-primary rounded-pill">
+        <button type="button" id="addBtn" class="btn btn-primary rounded-pill">
             Add
         </button>
     </div>
     <div class="d-flex align-items-center justify-content-center" style="height: 50px;">
-        <button type="button" id="randomBtn" class="btn btn-primary rounded-pill">
-            <a href="{{ route('cuisine.index') }}" class="text-white">All Cuisine</a>
+        <button type="button" id="allCuisineBtn" class="btn btn-primary rounded-pill">
+            <a href="{{ route('cuisines.index') }}" class="text-white">All Cuisine</a>
         </button>
     </div>
 </body>

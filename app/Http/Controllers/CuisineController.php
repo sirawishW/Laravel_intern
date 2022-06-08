@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cuisine;
 use Illuminate\Http\Request;
+use Nette\Utils\Random;
 use PhpParser\Node\Expr\FuncCall;
 
 class CuisineController extends Controller
@@ -93,7 +94,10 @@ class CuisineController extends Controller
     {
         //
     }
-    public function showall(){
-        return view('cuisine.all-cuisine');
+    // public function showall(){
+    //     return view('cuisine.all-cuisine');
+    // }
+    public function random(){
+
     }
 }

@@ -22,5 +22,10 @@
     <div class='container text-center'>
         {{ $cuisine->description }}
     </div>
+    <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+            <button type="button" id="homeBtn" class="btn btn-primary rounded-pill">
+                <a class="text-white">Home</a>
+            </button>
+        </div>
 </body>
 </html>
