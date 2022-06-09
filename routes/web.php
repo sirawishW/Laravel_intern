@@ -17,4 +17,8 @@ Route::get('/', function () {
     return view('layouts.homepage');
 });
 
+Route::get('/signup', function () {
+    return view('user.signup');
+});
+
 Route::resource('cuisines', \App\Http\Controllers\CuisineController::class);

@@ -52,7 +52,7 @@
         </div>
         <div class="d-flex align-items-center justify-content-center">
             <button type="button" id="homeBtn" class="btn btn-dark rounded-pill">
-                <a class="text-white">Home</a>
+                <a class="text-white" href="/">Home</a>
             </button>
         </div>
     </div>

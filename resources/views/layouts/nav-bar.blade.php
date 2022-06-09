@@ -1,11 +1,14 @@
 <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
-      <h4 class="text-white">Eatomizer</h4>
+      <h4><a href="/" class="text-white" style="text-decoration:none"> Eatomizer</a></h4>
       <span class="text-muted">Please Login if you want to add more cuisine</span>
     </div>
     <div class="bg-dark p-4">
       <a href="" class="text-white">Login</a>
+    </div>
+    <div class="bg-dark p-4">
+      <a href="/signup" class="text-white">Signup</a>
     </div>
   </div>
   <nav class="navbar navbar-dark bg-dark">
