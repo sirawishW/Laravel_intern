@@ -10,6 +10,7 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
+    @include('layouts.nav-bar')
     <div>
         <table class="table border-grey-200">
             <thead>
@@ -45,12 +46,12 @@
         </table>
     </div>
         <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-            <button type="button" id="addBtn" class="btn btn-primary rounded-pill">
+            <button type="button" id="addBtn" class="btn btn-dark rounded-pill">
                 Add
             </button>
         </div>
         <div class="d-flex align-items-center justify-content-center">
-            <button type="button" id="homeBtn" class="btn btn-primary rounded-pill">
+            <button type="button" id="homeBtn" class="btn btn-dark rounded-pill">
                 <a class="text-white">Home</a>
             </button>
         </div>

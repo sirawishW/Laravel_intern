@@ -15,6 +15,7 @@
     <div class='container text-center'>
         Don't know what to eat? , let us decide it for you
     </div>
+    @yield('content')
     <div class="d-flex align-items-center justify-content-center" style="height: 50px;">
         <button type="button" id="randomBtn" class="btn btn-dark rounded-pill">Random</button>
     </div>
