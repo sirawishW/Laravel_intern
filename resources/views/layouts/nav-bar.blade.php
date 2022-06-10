@@ -9,7 +9,7 @@
       <a href="/signup" class="text-white">Signup</a>
     </div>
   </div>
-  <nav class="navbar navbar-dark bg-dark">
+  <nav class="navbar navbar-dark bg-dark ps-2">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>

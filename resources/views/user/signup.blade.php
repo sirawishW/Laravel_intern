@@ -11,48 +11,55 @@
 </head>
 <body>
 <section class="vh-100">
-  <div class="container-fluid">
-    <div class="row">
-      <div>
-          <br>
-        <div class="px-5 ms-xl-4">
-          <span class="h1 fw-bold mb-0 d-flex align-items-center justify-content-center">Eatomizer</span>
+    <div
+    class="bg-image d-flex justify-content-center align-items-center"
+    style="
+        background-image: url('https://mdbcdn.b-cdn.net/img/new/fluid/nature/015.webp');
+        height: 100vh;
+    "
+    >
+        <div class="container-fluid">
+        <div class="row d-flex justify-content-center">
+        <div class="card mt-2 pt-5" style="border-radius: 0.5rem; width: 27rem;">
+            <div class="card-body">
+                <div class="px-5 ms-xl-4">
+                <span class="h1 fw-bold mb-0 d-flex align-items-center justify-content-center">Eatomizer</span>
+                </div>
+                <br>
+                <div class="d-flex align-items-center justify-content-center">
+
+                <form style="width: 20rem;">
+
+                    <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Signup</h3>
+
+                    <div class="form-outline mb-4">
+                    <input type="email" id="form2Example18" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example18">Email address</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                    <input type="password" id="form2Example28" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example28">Password</label>
+                    </div>
+
+                    <div class="form-outline mb-4">
+                    <input type="password" id="form2Example28" class="form-control form-control-lg" />
+                    <label class="form-label" for="form2Example28">Confirm Password</label>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-center py-2 my-3">
+                    <button class="btn btn-dark rounded-pill" type="button">Register</button>
+                    </div>
+                </form>
+                </div>
+            </div>
         </div>
-        <br>
-        <div class="d-flex align-items-center justify-content-center">
-
-          <form style="width: 23rem;">
-
-            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Signup</h3>
-
-            <div class="form-outline mb-4">
-              <input type="email" id="form2Example18" class="form-control form-control-lg" />
-              <label class="form-label" for="form2Example18">Email address</label>
-            </div>
-
-            <div class="form-outline mb-4">
-              <input type="password" id="form2Example28" class="form-control form-control-lg" />
-              <label class="form-label" for="form2Example28">Password</label>
-            </div>
-
-            <div class="form-outline mb-4">
-              <input type="password" id="form2Example28" class="form-control form-control-lg" />
-              <label class="form-label" for="form2Example28">Confirm Password</label>
-            </div>
-
-            <div class="d-flex align-items-center justify-content-center">
-              <button class="btn btn-dark rounded-pill" type="button">Register</button>
-            </div>
-          </form>
-
+        <!-- <div class="col-sm-6 px-0 d-none d-sm-block">
+            <img src="" class="w-100 vh-100 rounded-8" style="object-fit: cover; object-position: left;">
+        </div> -->
         </div>
-
-      </div>
-      <!-- <div class="col-sm-6 px-0 d-none d-sm-block">
-        <img src="" class="w-100 vh-100 rounded-8" style="object-fit: cover; object-position: left;">
-      </div> -->
     </div>
-  </div>
+    </div>
 </section>
 </body>
 </html>
