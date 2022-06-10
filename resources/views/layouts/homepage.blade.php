@@ -15,9 +15,11 @@
     <div class='container text-center'>
         Don't know what to eat? , let us decide it for you
     </div>
-    @yield('content')
+    
     <div class="d-flex align-items-center justify-content-center" style="height: 50px;">
-        <button type="button" id="randomBtn" class="btn btn-dark rounded-pill">Random</button>
+        <button type="button" id="randomBtn" class="btn btn-dark rounded-pill">
+            Random
+        </button>
     </div>
     <div class="d-flex align-items-center justify-content-center" style="height: 50px;">
         <button type="button" id="addBtn" class="btn btn-dark rounded-pill">
@@ -26,7 +28,7 @@
     </div>
     <div class="d-flex align-items-center justify-content-center" style="height: 50px;">
         <button type="button" id="allCuisineBtn" class="btn btn-dark rounded-pill">
-            <a href="{{ route('cuisines.index') }}" class="text-white">All Cuisine</a>
+            <a href="{{ route('cuisines.index') }}" class="text-white" style="text-decoration:none">All Cuisine</a>
         </button>
     </div>
 </body>

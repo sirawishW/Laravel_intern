@@ -5,9 +5,7 @@
       <span class="text-muted">Please Login if you want to add more cuisine</span>
     </div>
     <div class="bg-dark p-4">
-      <a href="" class="text-white">Login</a>
-    </div>
-    <div class="bg-dark p-4">
+      <a href="/signin" class="text-white">Login</a><br>
       <a href="/signup" class="text-white">Signup</a>
     </div>
   </div>

@@ -17,8 +17,14 @@ Route::get('/', function () {
     return view('layouts.homepage');
 });
 
+Route::get('/signin', function () {
+    return view('user.signin');
+});
+
 Route::get('/signup', function () {
     return view('user.signup');
 });
+
+Route::get('random', [\App\Http\Controllers\CuisineController::class, "random"]);
 
 Route::resource('cuisines', \App\Http\Controllers\CuisineController::class);

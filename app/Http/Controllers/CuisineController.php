@@ -68,9 +68,13 @@ class CuisineController extends Controller
      * @param  \App\Models\Cuisine  $cuisine
      * @return \Illuminate\Http\Response
      */
-    public function edit(Cuisine $cuisine)
+    public function edit($id, $cuisine)
     {
-        //
+        $cuisines = Cuisine::findOrFail($id);
+        $cuisines->nameTH = $cuisine->nameTH;
+        $cuisines->nameEN = $cuisine->nameEN;
+        $cuisines->nationality = $cuisine->nationality;
+        $cuisines->description = $cuisine->description;
     }
 
     /**
@@ -98,9 +102,13 @@ class CuisineController extends Controller
     // public function showall(){
     //     return view('cuisine.all-cuisine');
     // }
+
+    //Random cuisine method
     public function random(){
         $cuisines = Cuisine::All();
         $random = Arr::random($cuisines);
-        return $random;
+        return view('cuisine.random-cuisine', [
+            'random' => $random
+        ]);
     }
 }

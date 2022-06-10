@@ -25,12 +25,12 @@
                 @foreach($cuisines as $cuisine)
                     <tr>
                         <td>
-                            <a href="{{ route('cuisines.show', ['cuisine' => $cuisine->id]) }}">
+                            <a href="{{ route('cuisines.show', ['cuisine' => $cuisine->id]) }}" class="text-black">
                                 {{ $cuisine->nameTH }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ route('cuisines.show', ['cuisine' => $cuisine->id]) }}">
+                            <a href="{{ route('cuisines.show', ['cuisine' => $cuisine->id]) }}" class="text-black">
                                 {{ $cuisine->nameEN }}
                             </a>
                         </td>
@@ -52,7 +52,7 @@
         </div>
         <div class="d-flex align-items-center justify-content-center">
             <button type="button" id="homeBtn" class="btn btn-dark rounded-pill">
-                <a class="text-white" href="/">Home</a>
+                <a class="text-white" href="/" style="text-decoration:none">Home</a>
             </button>
         </div>
     </div>
