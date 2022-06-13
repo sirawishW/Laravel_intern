@@ -11,9 +11,9 @@
 </head>
 <body>
 <section class="vh-100">
-  <div class="container-fluid">
+  <div class="container-fluid bg-white">
     <div class="row">
-      <div class="col-sm-6 text-black">
+      <div class="col-sm-6 text-black pt-5 mt-3">
 
         <div class="px-5 ms-xl-4">
           <span class="h1 fw-bold mb-0">Eatomizer</span>
@@ -47,9 +47,9 @@
         </div>
 
       </div>
-      <!-- <div class="col-sm-6 px-0 d-none d-sm-block">
-        <img src="" class="w-100 vh-100 rounded-8" style="object-fit: cover; object-position: left;">
-      </div> -->
+      <div class="col-sm-6 px-0 d-none d-sm-block">
+        <img src="/images/food2.jpg" class="w-100 vh-100 rounded-8" style="object-fit: cover; object-position: left;">
+      </div>
     </div>
   </div>
 </section>
