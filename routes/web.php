@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layouts.homepage');
+    return view('cuisine.random-cuisine');
 });
 
 Route::get('/signin', function () {

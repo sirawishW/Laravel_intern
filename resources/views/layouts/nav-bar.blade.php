@@ -1,7 +1,7 @@
 <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
     <div class="bg-dark p-4">
-      <h4><a href="/" class="text-white" style="text-decoration:none"> Eatomizer</a></h4>
+      <h1><a href="/" class="fw-bold text-white" style="text-decoration:none"> Eatomizer</a></h4>
       <span class="text-muted">Please Login if you want to add more cuisine</span>
     </div>
     <div class="bg-dark p-4">

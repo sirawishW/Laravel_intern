@@ -13,7 +13,7 @@
 <section class="vh-100">
   <div class="container-fluid bg-white">
     <div class="row">
-      <div class="col-sm-6 text-black pt-5 mt-3">
+      <div class="col-sm-6 text-black pt-5 ps-4 mt-5">
 
         <div class="px-5 ms-xl-4">
           <span class="h1 fw-bold mb-0">Eatomizer</span>
@@ -40,7 +40,7 @@
             </div>
 
             <p class="small mb-5 pb-lg-2"><a class="text-muted" href="/">Forgot password?</a></p>
-            <p>Don't have an account? <a href="/" class="link-info">Register here</a></p>
+            <p>Don't have an account? <a href="/signup" class="link-info">Register here</a></p>
 
           </form>
 
