@@ -25,7 +25,22 @@
                     <div class='fw-normal text-center pt-3' style="letter-spacing: 1px;">
                         Don't know what to eat? , let us decide it for you
                     </div>
-                    
+                    <div class="ms-4 mb-2 mt-3">
+                        <label class="form-label" for="form2Example18">Name(English)</label>
+                        <input type="name" id="nameEN" class="form-inline ms-2" style="border-radius: 0.5rem; width: 15rem;"/>
+                    </div>
+                    <div class="ms-4 mb-2 mt-3">
+                        <label class="form-label" for="form2Example28">Name(Thai)</label>
+                        <input type="name" id="nameTH" class="form-inline ms-4" style="border-radius: 0.5rem; width: 15rem;"/>
+                    </div>
+                    <div class="ms-4 mb-2 mt-3">
+                        <label class="form-label" for="form2Example28">Nationality</label>
+                        <input type="name" id="nameTH" class="form-inline ms-4" style="border-radius: 0.5rem; width: 15rem;"/>
+                    </div>
+                    <div class="ms-4 mb-2 mt-3">
+                        <label class="form-label" for="form2Example28">Description</label>
+                        <input type="name" id="nameTH" class="form-inline ms-4" style="border-radius: 0.5rem; width: 15rem;"/>
+                    </div>
                     <div class="d-flex align-items-center justify-content-center pt-5 pb-5 mt-auto" style="height: 50px;">
                         <button type="button" id="allCuisineBtn" class="btn btn-dark rounded-pill" onclick="window.location.href='/cuisines'">
                             All Menu
