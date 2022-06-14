@@ -20,7 +20,7 @@
     >
         <div class="container-fluid">
             <div class="row d-flex ps-5">
-                <div class="card mt-4 d-flex" style="border-radius: 0.5rem; width: 30rem;">
+                <div class="card mt-2 d-flex" style="border-radius: 0.5rem; width: 30rem;">
                     <h1 class='container text-center pt-5 fw-bold'>Eatomizer</h1>
                     <div class='fw-normal text-center pt-3' style="letter-spacing: 1px;">
                         Don't know what to eat? , let us decide it for you
@@ -36,7 +36,7 @@
                     </div>
                 </div>
                 <div class="col-sm-9 col-md-6 col-lg-8">
-                    <div class="card mt-4 d-flex" style="border-radius: 0.5rem; width: 60rem; height: 40rem">
+                    <div class="card mt-2 d-flex" style="border-radius: 0.5rem; width: 60rem; height: 40rem">
                         @foreach($random as $index)
                             <div class='fw-normal text-center pt-4' style="letter-spacing: 2px;">
                                 This is your menu

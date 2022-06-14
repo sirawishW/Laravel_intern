@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Nationality extends Model
 {
     use HasFactory;
+
+    public function cuisine(){
+        return $this->belongsTo(Cuisine::class);
+    }
 }
