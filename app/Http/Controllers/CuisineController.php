@@ -43,7 +43,7 @@ class CuisineController extends Controller
     {
         $cuisine = new Cuisine();
         $cuisine->nameTH = $request->input('nameTH');
-        $cuisine->nameEN = $request->input('nameEn');
+        $cuisine->nameEN = $request->input('nameEN');
         $cuisine->nationality = $request->input('nationality');
         $cuisine->description = $request->input('description');
     }
@@ -105,8 +105,7 @@ class CuisineController extends Controller
 
     //Random cuisine method
     public function random(){
-        $cuisines = Cuisine::All();
-        $random = Arr::random($cuisines);
+        $random = Cuisine::All()->random(1);
         return view('cuisine.random-cuisine', [
             'random' => $random
         ]);

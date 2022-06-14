@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CuisineController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('cuisine.random-cuisine');
+    return view('layouts.homepage');
 });
 
 Route::get('/signin', function () {
@@ -25,6 +26,7 @@ Route::get('/signup', function () {
     return view('user.signup');
 });
 
-Route::get('random', [\App\Http\Controllers\CuisineController::class, "random"]);
+Route::get('/cuisines/{id}', [\App\Http\Controllers\CuisineController::class, "show"]);
+Route::get('/random', [\App\Http\Controllers\CuisineController::class, "random"]);
 
 Route::resource('cuisines', \App\Http\Controllers\CuisineController::class);

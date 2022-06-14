@@ -27,8 +27,8 @@
                     </div>
                     
                     <div class="d-flex align-items-center justify-content-center pt-5 pb-5 mt-auto" style="height: 50px;">
-                        <button type="button" id="allCuisineBtn" class="btn btn-dark rounded-pill">
-                            <a href="{{ route('cuisines.index') }}" class="text-white" style="text-decoration:none">All Menu</a>
+                        <button type="button" id="allCuisineBtn" class="btn btn-dark rounded-pill" onclick="window.location.href='/cuisines'">
+                            All Menu
                         </button>
                         <button type="button" id="addBtn" class="btn btn-dark rounded-pill ms-2">
                             Add
@@ -36,18 +36,15 @@
                     </div>
                 </div>
                 <div class="col-sm-9 col-md-6 col-lg-8">
-                    <div class="card mt-4 d-flex" style="border-radius: 0.5rem; width: 60rem; height: 35rem">
+                    <div class="card mt-4 d-flex" style="border-radius: 0.5rem; width: 60rem; height: 40rem">
                         <div class='fw-normal text-center pt-4' style="letter-spacing: 2px;">
                             Which menu you'll get?
                         </div>
-                        <!-- <div class="justify-content-center">
-                            @yield('content')
-                        </div> -->
                         <div class="d-flex align-items-center justify-content-center mt-auto" style="height: 50px;">
-                        <button type="button" id="randomBtn" class="btn btn-dark rounded-pill mb-5">
-                            Random
-                        </button>
-                    </div>
+                            <button type="button" id="randomBtn" class="btn btn-dark rounded-pill mb-5">
+                                <a href="/random" class="text-white" style="text-decoration:none;">Random</a>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -56,5 +53,4 @@
 </body>
 </html>
 <script>
-
 </script>

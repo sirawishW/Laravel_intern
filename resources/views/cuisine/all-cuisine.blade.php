@@ -51,8 +51,8 @@
             </button>
         </div>
         <div class="d-flex align-items-center justify-content-center">
-            <button type="button" id="homeBtn" class="btn btn-dark rounded-pill">
-                <a class="text-white" href="/" style="text-decoration:none">Home</a>
+            <button type="button" id="homeBtn" class="btn btn-dark rounded-pill" onclick="window.location.href='/'">
+                Home
             </button>
         </div>
     </div>

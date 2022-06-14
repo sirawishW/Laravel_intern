@@ -11,23 +11,31 @@
 </head>
 <body>
     @include('layouts.nav-bar')
-    <div class="container text-center mt-4">
-        <div>
-            <h1>{{ $cuisine->nameTH }}</h1>
-        </div>
-        <div>
-            <h1>{{ $cuisine->nameEN }}</h1>
-        </div>
-        <div>
-            <img src="{{ $cuisine->path }}">
-        </div>
-        <div class="pt-4">
-            {{ $cuisine->description }}
-        </div>
-        <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-            <button type="button" id="homeBtn" class="btn btn-dark rounded-pill">
-                <a class="text-white" href="/" style="text-decoration:none">Home</a>
-            </button>
+    <div
+    class="bg-image d-flex justify-content-center align-items-center"
+    style="
+        background-image: url('/images/food2.jpg');
+        height: 93vh;
+    "
+    >
+        <div class="card container text-center mt-4">
+            <div>
+                <h1 class="pt-4">{{ $cuisine->nameTH }}</h1>
+            </div>
+            <div>
+                <h1>{{ $cuisine->nameEN }}</h1>
+            </div>
+            <div>
+                <img src="{{ $cuisine->path }}">
+            </div>
+            <div class="pt-4">
+                {{ $cuisine->description }}
+            </div>
+            <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
+                <button type="button" id="homeBtn" class="btn btn-dark rounded-pill" onclick="window.location.href='/'">
+                    Home
+                </button>
+            </div>
         </div>
     </div>
 </body>
