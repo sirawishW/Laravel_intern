@@ -99,9 +99,6 @@ class CuisineController extends Controller
     {
         //
     }
-    // public function showall(){
-    //     return view('cuisine.all-cuisine');
-    // }
 
     //Random cuisine method
     public function random(){
