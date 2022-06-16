@@ -1,23 +1,23 @@
 <div class="pos-f-t">
   <div class="collapse" id="navbarToggleExternalContent">
-    @if (session('status'))
-      <div class="alert alert-success" role="alert">
-          {{ session('status') }}
+    @if (Auth::user())
+      <div class="bg-dark p-4">
+        <h1><a href="/" class="fw-bold text-white" style="text-decoration:none"> Eatomizer</a></h1>
+        <label class="text-white">Welcome, {{ Auth::user()->name }}</label>
       </div>
-      <div>
-        Welcome, {{ Auth::user()->name }}
+      <div class="bg-dark p-4">
+        <a href="{{ route('logout') }}"
+          onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();" class="text-white">
+            {{ __('Logout') }}
+        </a>
+        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+          @csrf
+        </form>
       </div>
-      <a href="{{ route('logout') }}"
-        onclick="event.preventDefault();
-                      document.getElementById('logout-form').submit();">
-          {{ __('Logout') }}
-      </a>
-      <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-        @csrf
-      </form>
     @else
       <div class="bg-dark p-4">
-        <h1><a href="/" class="fw-bold text-white" style="text-decoration:none"> Eatomizer</a></h4>
+        <h1><a href="/" class="fw-bold text-white" style="text-decoration:none"> Eatomizer</a></h1>
         <span class="text-muted">Please Login if you want to add more cuisine</span>
       </div>
       <div class="bg-dark p-4">
