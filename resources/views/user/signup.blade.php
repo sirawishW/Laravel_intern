@@ -33,22 +33,27 @@
                             <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Signup</h3>
 
                             <div class="form-outline mb-4">
-                            <input type="email" id="form2Example18" class="form-control form-control-lg" />
-                            <label class="form-label" for="form2Example18">Email address</label>
+                                <input type="name" id="form2Example18" class="form-control form-control-lg" />
+                                <label class="form-label" for="form2Example18">Name</label>
                             </div>
 
                             <div class="form-outline mb-4">
-                            <input type="password" id="form2Example28" class="form-control form-control-lg" />
-                            <label class="form-label" for="form2Example28">Password</label>
+                                <input type="email" id="form2Example18" class="form-control form-control-lg" />
+                                <label class="form-label" for="form2Example18">Email address</label>
                             </div>
 
                             <div class="form-outline mb-4">
-                            <input type="password" id="form2Example28" class="form-control form-control-lg" />
-                            <label class="form-label" for="form2Example28">Confirm Password</label>
+                                <input type="password" id="form2Example28" class="form-control form-control-lg" />
+                                <label class="form-label" for="form2Example28">Password</label>
+                            </div>
+
+                            <div class="form-outline mb-4">
+                                <input type="password" id="form2Example28" class="form-control form-control-lg" />
+                                <label class="form-label" for="form2Example28">Confirm Password</label>
                             </div>
 
                             <div class="d-flex align-items-center justify-content-center py-2 my-3">
-                            <button class="btn btn-dark rounded-pill" type="button">Register</button>
+                                <button class="btn btn-dark rounded-pill" type="button">Register</button>
                             </div>
                         </form>
                         </div>

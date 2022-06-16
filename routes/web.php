@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\CuisineController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,3 +31,7 @@ Route::get('/cuisines/{id}', [\App\Http\Controllers\CuisineController::class, "s
 Route::get('/random', [\App\Http\Controllers\CuisineController::class, "random"]);
 
 Route::resource('cuisines', \App\Http\Controllers\CuisineController::class);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
