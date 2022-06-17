@@ -35,4 +35,49 @@ class RegisterTest extends TestCase
         $this->assertAuthenticated();
         $response->assertRedirect(RouteServiceProvider::HOME);
     }
+
+    public function test_new_users_can_register_and_login()
+    {
+        $response = $this->post('/register', [
+            'name' => 'Test User',
+            'username' => 'Testtest',
+            'email' => 'test@example.com',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+        ]);
+
+        $response = $this->post('/login', [
+            'username' => 'Testtest',
+            'password' => 'password',
+        ]);
+ 
+        $this->assertAuthenticated();
+        $response->assertRedirect(RouteServiceProvider::HOME);
+    }
+
+    public function test_new_users_can_register_and_login_then_logout()
+    {
+        $response = $this->post('/register', [
+            'name' => 'Test User',
+            'username' => 'Testtest',
+            'email' => 'test@example.com',
+            'password' => 'password',
+            'password_confirmation' => 'password',
+        ]);
+
+        $this->assertAuthenticated();
+        
+        $response = $this->post('/logout');
+
+        $response = $this->post('/login', [
+            'username' => 'Testtest',
+            'password' => 'password',
+        ]);
+
+        $this->assertAuthenticated();
+
+        $response = $this->post('/logout');
+
+        $response->assertRedirect('/');
+    }
 }
