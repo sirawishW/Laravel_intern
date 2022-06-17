@@ -2,18 +2,19 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Providers\RouteServiceProvider;
 use Tests\TestCase;
 
 class RegisterTest extends TestCase
 {
+    use RefreshDatabase;
+    
     /**
      * A basic feature test example.
      *
      * @return void
      */
- 
     public function test_registration_screen_can_be_rendered()
     {
         $response = $this->get('/register');

@@ -2,13 +2,15 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\WithFaker;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 use Tests\TestCase;
 
 class LoginTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic feature test example.
      *
@@ -27,7 +29,7 @@ class LoginTest extends TestCase
         $user = User::factory()->create();
  
         $response = $this->post('/login', [
-            'email' => $user->email,
+            'username' => $user->username,
             'password' => 'password',
         ]);
  
@@ -40,7 +42,7 @@ class LoginTest extends TestCase
         $user = User::factory()->create();
  
         $this->post('/login', [
-            'email' => $user->email,
+            'username' => $user->username,
             'password' => 'wrong-password',
         ]);
  
