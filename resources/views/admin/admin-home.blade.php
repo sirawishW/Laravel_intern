@@ -10,6 +10,42 @@
     <script src="{{ asset('js/app.js') }}"></script>
 </head>
 <body>
-    
+    @include('layouts.nav-bar')
+    <div>
+        <table class="table border-grey-200">
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Name(TH)</th>
+                    <th>Name(EN)</th>
+                    <th>Nationality</th>
+                    <th>Description</th>
+                    <th>Request type</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($cuisines as $cuisine)
+                    <tr>
+                        <td>
+                            <a href="{{ route('cuisines.show', ['cuisine' => $cuisine->id]) }}" class="text-black">
+                                {{ $cuisine->nameTH }}
+                            </a>
+                        </td>
+                        <td>
+                            <a href="{{ route('cuisines.show', ['cuisine' => $cuisine->id]) }}" class="text-black">
+                                {{ $cuisine->nameEN }}
+                            </a>
+                        </td>
+                        <td>
+                            {{ $cuisine->nationality }}
+                        </td>
+                        <td>
+                            {{ $cuisine->description }}
+                        </td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
