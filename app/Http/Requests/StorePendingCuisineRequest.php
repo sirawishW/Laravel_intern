@@ -24,7 +24,9 @@ class StorePendingCuisineRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'nameTH' => 'require',
+            'nameEN' => 'require',
+            'description' => "nullable"
         ];
     }
 }

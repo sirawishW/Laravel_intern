@@ -30,6 +30,8 @@ Route::get('/signup', function () {
 Route::get('/cuisines/{id}', [\App\Http\Controllers\CuisineController::class, "show"]);
 Route::get('/random', [\App\Http\Controllers\CuisineController::class, "random"]);
 
+Route::post('/add', [\App\Http\Controllers\PendingCuisineController::class, "store"]);
+
 Route::resource('cuisines', \App\Http\Controllers\CuisineController::class);
 
 Auth::routes();

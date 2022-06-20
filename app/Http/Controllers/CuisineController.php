@@ -41,11 +41,17 @@ class CuisineController extends Controller
      */
     public function store(Request $request)
     {
-        $cuisine = new Cuisine();
-        $cuisine->nameTH = $request->input('nameTH');
-        $cuisine->nameEN = $request->input('nameEN');
-        $cuisine->nationality = $request->input('nationality');
-        $cuisine->description = $request->input('description');
+        $request->validate([
+            'nameTH' => 'require',
+            'nameEN' => 'require',
+            'description' => "nullable"
+        ]);
+        $cuisine = Cuisine::create([
+            'nameTH' => $request->input('nameTH'),
+            'nameEN' => $request->input('nameEN'),
+            'nationality' => $request->input('nationality'),
+            'description' => $request->input('description'),
+        ]);
     }
 
     /**

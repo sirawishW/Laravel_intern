@@ -36,7 +36,13 @@ class PendingCuisineController extends Controller
      */
     public function store(StorePendingCuisineRequest $request)
     {
-        //
+        $validated = $request->validated();
+        $pendingCuisine = PendingCuisine::create([
+            'nameTH' => $request->input('nameTH'),
+            'nameEN' => $request->input('nameEN'),
+            'nationality' => $request->input('nationality'),
+            'description' => $request->input('description'),
+        ]);
     }
 
     /**
