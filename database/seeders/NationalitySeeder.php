@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Http\Controllers\NationalityController;
 use Illuminate\Database\Seeder;
 
 class NationalitySeeder extends Seeder
@@ -13,6 +14,7 @@ class NationalitySeeder extends Seeder
      */
     public function run()
     {
-        //
+        $controller = new NationalityController;
+        $controller->importCsv();
     }
 }

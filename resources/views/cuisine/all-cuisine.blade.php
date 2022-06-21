@@ -50,11 +50,19 @@
                 Add
             </button>
         </div>
+        @if (Auth::user())
+        <div class="d-flex align-items-center justify-content-center">
+            <button type="button" id="homeBtn" class="btn btn-dark rounded-pill" onclick="window.location.href='/home'">
+                Home
+            </button>
+        </div>
+        @else
         <div class="d-flex align-items-center justify-content-center">
             <button type="button" id="homeBtn" class="btn btn-dark rounded-pill" onclick="window.location.href='/'">
                 Home
             </button>
         </div>
+        @endif
     </div>
 </body>
 </html>
