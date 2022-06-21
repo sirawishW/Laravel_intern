@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class PendingCuisine extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nameTH',
+        'nameEN',
+        'nationality',
+        'description',
+        'image'
+    ];
 }

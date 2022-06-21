@@ -26,7 +26,7 @@
                 <h1>{{ $cuisine->nameEN }}</h1>
             </div>
             <div>
-                <img src="{{ $cuisine->path }}">
+                <img src="{{ $cuisine->image }}">
             </div>
             <div class="pt-4">
                 {{ $cuisine->description }}

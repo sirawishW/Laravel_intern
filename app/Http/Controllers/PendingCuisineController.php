@@ -37,6 +37,14 @@ class PendingCuisineController extends Controller
     public function store(StorePendingCuisineRequest $request)
     {
         $validated = $request->validated();
+        if($request->hasFile('image')){
+            $destination_path = 'public/images/cuisines';
+            $image = $request->file('image');
+            $image_name = $image->getClientOriginalName();
+            $path = $request->file('image')->storeAs($destination_path, $image_name);
+
+            $input['image'] = $image_name;
+        }
         $pendingCuisine = PendingCuisine::create([
             'nameTH' => $request->input('nameTH'),
             'nameEN' => $request->input('nameEN'),

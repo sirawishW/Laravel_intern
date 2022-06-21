@@ -18,7 +18,7 @@ class CuisineFactory extends Factory
             'nameEN' => $this->faker->word(),
             'nationality' => $this->faker->word(),
             'description' => $this->faker->paragraph(),
-            'path' => $this->faker->imageUrl(360, 360, 'foods', true)
+            'image' => $this->faker->imageUrl(360, 360, 'foods', true)
         ];
     }
 }

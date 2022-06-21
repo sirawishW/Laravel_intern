@@ -19,7 +19,7 @@ class CreateCuisinesTable extends Migration
             $table->string('nameEN');
             $table->string('nationality');
             $table->longText('description');
-            $table->string('path');
+            $table->string('image');
             $table->timestamps();
             $table->softDeletes();
         });

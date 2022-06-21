@@ -14,6 +14,6 @@ class PendingCuisineSeeder extends Seeder
      */
     public function run()
     {
-        PendingCuisine::factory(50)->create();
+        PendingCuisine::factory(10)->create();
     }
 }

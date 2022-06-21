@@ -94,7 +94,7 @@
                                 <label class="form-label" for="nationality">Nationality</label>
                                 <select class="form-select form-select-sm form-select-border-width: ">
                                     @foreach($nationalities as $nationality)
-                                        <option value="{{ $nationality->nation }}">{{ $nationality->nation }}</option>
+                                        <option value="{{ $nationality->id }}">{{ $nationality->nation }}</option>
                                     @endforeach
                                 </select>
                             </div>

@@ -76,7 +76,7 @@
                                 {{ $index-> nameTH }}
                             </div>
                             <div class='fw-normal text-center pt-1'>
-                                <img src="{{ $index->path }}">
+                                <img src="{{ $index->image }}">
                             </div>
                             <div class='fw-normal text-center pt-1'>
                                 {{ $index-> nationality}}

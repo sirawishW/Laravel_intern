@@ -20,7 +20,7 @@ class CreatePendingCuisinesTable extends Migration
             $table->string('user');
             $table->string('nationality');
             $table->longText('description');
-            $table->string('path');
+            $table->string('image');
             $table->timestamps();
             $table->softDeletes();
         });
