@@ -25,10 +25,42 @@
                     <div class='fw-normal text-center pt-3' style="letter-spacing: 1px;">
                         Don't know what to eat? , let us decide it for you
                     </div>
+                    @if(Auth::user())
+                    <div class="col-xs-8 col-sm-6 ms-5">
+                        <div class="form-outline ms-5 mb-2 mt-3">
+                            <label class="form-label" for="nameEN">Name(English)</label>
+                            <input type="name" id="nameEN" class="form-inline" style="border-radius: 0.5rem; width: 15rem;"/>
+                        </div>
+                        <div class="form-outline ms-5 mb-2 mt-3">
+                            <label class="form-label" for="nameTH">Name(Thai)</label>
+                            <input type="name" id="nameTH" class="form-inline" style="border-radius: 0.5rem; width: 15rem;"/>
+                        </div>
+                        <div class="form-outline ms-5 mb-2 mt-3">
+                            <label class="form-label" for="nationality">Nationality</label>
+                            <select class="form-select form-select-sm form-select-border-width: ">
+                                @foreach($nationalities as $nationality)
+                                    <option value="{{ $nationality->nation }}">{{ $nationality->nation }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="form-outline ms-5 mb-2 mt-3">
+                            <label class="form-label" for="description">Description</label>
+                            <input type="name" id="description" class="form-inline" style="border-radius: 0.5rem; width: 15rem; height: 5rem"/>
+                        </div>
+                        <div class="form-outline ms-5 mb-2 mt-3">
+                            <input type="file" id="img" name="img" accept="image/*">
+                        </div>
+                    </div>
+                    @endif
                     <div class="d-flex align-items-center justify-content-center pt-5 pb-5 mt-auto" style="height: 50px;">
                         <button type="button" id="allCuisineBtn" class="btn btn-dark rounded-pill" onclick="window.location.href='/cuisines'">
                             All Menu
                         </button>
+                        @if(Auth::user())
+                        <button type="button" id="summit" class="btn btn-dark rounded-pill ms-2">
+                            Add
+                        </button>
+                        @endif
                     </div>
                 </div>
                 <div class="col-sm-9 col-md-6 col-lg-8">
@@ -54,9 +86,11 @@
                             </div>
                         @endforeach
                         <div class="d-flex align-items-center justify-content-center mt-auto" style="height: 50px;" onclick="toggleRandom()">
-                            <button type="button" id="randomBtn" class="btn btn-dark rounded-pill mb-5">
-                                <a href="/random" class="text-white" style="text-decoration:none;">Random</a>
-                            </button>
+                            <a href="/random">
+                                <button type="button" id="randomBtn" class="btn btn-dark rounded-pill mb-5">
+                                    Random
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>

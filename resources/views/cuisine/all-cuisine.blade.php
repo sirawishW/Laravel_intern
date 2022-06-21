@@ -45,22 +45,21 @@
             </tbody>
         </table>
     </div>
-        <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
-            <button type="button" id="addBtn" class="btn btn-dark rounded-pill">
-                Add
-            </button>
-        </div>
         @if (Auth::user())
         <div class="d-flex align-items-center justify-content-center">
-            <button type="button" id="homeBtn" class="btn btn-dark rounded-pill" onclick="window.location.href='/home'">
-                Home
-            </button>
+            <a href="/home">
+                <button type="button" id="homeBtn" class="btn btn-dark rounded-pill">
+                    Home
+                </button>
+            </a>
         </div>
         @else
         <div class="d-flex align-items-center justify-content-center">
-            <button type="button" id="homeBtn" class="btn btn-dark rounded-pill" onclick="window.location.href='/'">
-                Home
-            </button>
+            <a href="/">
+                <button type="button" id="homeBtn" class="btn btn-dark rounded-pill">
+                    Home
+                </button>
+            </a>
         </div>
         @endif
     </div>

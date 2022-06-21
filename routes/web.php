@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CuisineController;
+use App\Models\Nationality;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -16,7 +17,10 @@ use Illuminate\Support\Facades\Auth;
 */
 
 Route::get('/', function () {
-    return view('layouts.homepage');
+    $nationalities = Nationality::all();
+    return view('layouts.homepage', [
+        'nationalities' => $nationalities,
+    ]);
 });
 
 Route::get('/cuisines/{id}', [\App\Http\Controllers\CuisineController::class, "show"]);

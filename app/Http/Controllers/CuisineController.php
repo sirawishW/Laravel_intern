@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Cuisine;
+use App\Models\Nationality;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Nette\Utils\Random;
@@ -109,8 +110,10 @@ class CuisineController extends Controller
     //Random cuisine method
     public function random(){
         $random = Cuisine::All()->random(1);
+        $nationalities = Nationality::All();
         return view('cuisine.random-cuisine', [
-            'random' => $random
+            'random' => $random,
+            'nationalities' => $nationalities
         ]);
     }
 }
