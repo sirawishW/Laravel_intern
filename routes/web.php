@@ -25,7 +25,7 @@ Route::get('/', function () {
 Route::get('/cuisines/{id}', [\App\Http\Controllers\CuisineController::class, "show"]);
 Route::get('/random', [\App\Http\Controllers\CuisineController::class, "random"]);
 
-Route::post('/add', [\App\Http\Controllers\PendingCuisineController::class, "store"]);
+Route::post('/add_cuisine', [\App\Http\Controllers\PendingCuisineController::class, "store"])->name('cuisine.add');
 
 Auth::routes();
 

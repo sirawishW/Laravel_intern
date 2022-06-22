@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\PendingCuisine;
-use App\Http\Requests\PendingCuisineRequest;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class PendingCuisineController extends Controller
@@ -32,12 +33,16 @@ class PendingCuisineController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\PendingCuisineRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(PendingCuisineRequest $request)
+    public function store(Request $request)
     {
-        $request->validated();
+        $request->validate([
+            'nameEN' => 'require|string|unique',
+            'nameTH' => 'require|string|unique',
+            'description' => 'require|string|max:1000',
+            'image' => 'require'
+        ]);
         $input = $request->all();
         if($request->hasFile('image')){
             $destination_path = 'public/images/cuisines';
@@ -47,7 +52,14 @@ class PendingCuisineController extends Controller
 
             $input['image'] = $image_name;
         }
-        PendingCuisine::create($input);
+        PendingCuisine::create([
+            'nameEN' => $input['nameEN'],
+            'nameTH' => $input['nameTH'],
+            'user'  => Auth::user()->name,
+            'nationality' => $input['nationality'],
+            'description' => $input['description'],
+            'image' => $input['image']
+        ]);
         session()->flash('message', $input['nameEN']. ' successfully request.');
 
         return redirect('/home');

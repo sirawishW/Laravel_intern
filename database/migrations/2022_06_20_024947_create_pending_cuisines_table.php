@@ -15,8 +15,8 @@ class CreatePendingCuisinesTable extends Migration
     {
         Schema::create('pending_cuisines', function (Blueprint $table) {
             $table->id();
-            $table->string('nameTH');
             $table->string('nameEN');
+            $table->string('nameTH');
             $table->string('user');
             $table->string('nationality');
             $table->longText('description');

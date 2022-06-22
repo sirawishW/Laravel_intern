@@ -78,11 +78,12 @@
                     <div class='fw-normal text-center pt-3' style="letter-spacing: 1px;">
                         Don't know what to eat? , let us decide it for you
                     </div>
-                    <form method="POST" action="{{ url('/add') }}">
+                    <form method="POST" action="{{ route('cuisine.add') }}">
+                        @csrf
                         <div class="col-xs-8 col-sm-6 ms-5">
                             <div class="form-outline ms-5 mb-2 mt-3">
                                 <label class="form-label" for="nameEN">Name(English)</label>
-                                <input type="text" id="nameEN" class="form-inline @error('nameEN') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem;" />
+                                <input type="text" id="nameEN" value="{{ old('nameEN') }}" class="form-inline @error('nameEN') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem;" required autocomplete="nameEN" />
                                 @error('nameEN')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -91,7 +92,7 @@
                             </div>
                             <div class="form-outline ms-5 mb-2 mt-3">
                                 <label class="form-label" for="nameTH">Name(Thai)</label>
-                                <input type="text" id="nameTH" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem;" />
+                                <input type="text" id="nameTH" value="{{ old('nameTH') }}" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem;" required autocomplete="nameTH" />
                                 @error('nameTH')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -102,13 +103,13 @@
                                 <label class="form-label" for="nationality">Nationality</label>
                                 <select class="form-select form-select-sm form-select-border-width: ">
                                     @foreach($nationalities as $nationality)
-                                    <option value="{{ $nationality->id }}">{{ $nationality->nation }}</option>
+                                    <option value="{{ $nationality->nation }}">{{ $nationality->nation }}</option>
                                     @endforeach
                                 </select>
                             </div>
                             <div class="form-outline ms-5 mb-2 mt-3">
                                 <label class="form-label" for="description">Description</label>
-                                <input type="text" id="description" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem; height: 5rem" />
+                                <input type="text" id="description" value="{{ old('description') }}" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem; height: 5rem" required autocomplete="description" />
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -116,7 +117,7 @@
                                 @enderror
                             </div>
                             <div class="form-outline ms-5 mb-2 mt-3">
-                                <input type="file" id="image" name="img" accept="image/*" class="form-inline @error('image') is-invalid @enderror">
+                                <input type="file" id="image" name="img" accept="image/*" value="{{ old('image') }}" class="form-inline @error('image') is-invalid @enderror" required autocomplete="image">
                                 @error('image')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -128,7 +129,7 @@
                             <button type="button" id="allCuisineBtn" class="btn btn-dark rounded-pill" onclick="window.location.href='/cuisines'">
                                 All Menu
                             </button>
-                            <button type="button" id="summit" class="btn btn-dark rounded-pill ms-2">
+                            <button type="summit" id="addBtn" class="btn btn-dark rounded-pill ms-2">
                                 Add
                             </button>
                         </div>

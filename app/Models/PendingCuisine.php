@@ -10,8 +10,9 @@ class PendingCuisine extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nameTH',
         'nameEN',
+        'nameTH',
+        'user',
         'nationality',
         'description',
         'image'
