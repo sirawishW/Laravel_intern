@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Nationality;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreNationalityRequest;
-use App\Http\Requests\UpdateNationalityRequest;
 
 class NationalityController extends Controller
 {
@@ -36,7 +34,7 @@ class NationalityController extends Controller
      * @param  \App\Http\Requests\StoreNationalityRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreNationalityRequest $request)
+    public function store(Request $request)
     {
         //
     }
@@ -70,7 +68,7 @@ class NationalityController extends Controller
      * @param  \App\Models\Nationality  $nationality
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateNationalityRequest $request, Nationality $nationality)
+    public function update(Request $request, Nationality $nationality)
     {
         //
     }

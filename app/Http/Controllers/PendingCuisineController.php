@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\PendingCuisine;
-use App\Http\Requests\StorePendingCuisineRequest;
-use App\Http\Requests\UpdatePendingCuisineRequest;
+use App\Http\Requests\PendingCuisineRequest;
+use Illuminate\Support\Facades\Auth;
 
 class PendingCuisineController extends Controller
 {
@@ -15,7 +15,8 @@ class PendingCuisineController extends Controller
      */
     public function index()
     {
-        //
+        $pendingCuisines = PendingCuisine::All();
+        return $pendingCuisines;
     }
 
     /**
@@ -31,26 +32,25 @@ class PendingCuisineController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StorePendingCuisineRequest  $request
+     * @param  \App\Http\Requests\PendingCuisineRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StorePendingCuisineRequest $request)
+    public function store(PendingCuisineRequest $request)
     {
-        $validated = $request->validated();
+        $request->validated();
+        $input = $request->all();
         if($request->hasFile('image')){
             $destination_path = 'public/images/cuisines';
             $image = $request->file('image');
             $image_name = $image->getClientOriginalName();
-            $path = $request->file('image')->storeAs($destination_path, $image_name);
+            $image = $request->file('image')->storeAs($destination_path, $image_name);
 
             $input['image'] = $image_name;
         }
-        $pendingCuisine = PendingCuisine::create([
-            'nameTH' => $request->input('nameTH'),
-            'nameEN' => $request->input('nameEN'),
-            'nationality' => $request->input('nationality'),
-            'description' => $request->input('description'),
-        ]);
+        PendingCuisine::create($input);
+        session()->flash('message', $input['nameEN']. ' successfully request.');
+
+        return redirect('/home');
     }
 
     /**
@@ -71,18 +71,6 @@ class PendingCuisineController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function edit(PendingCuisine $pendingCuisine)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdatePendingCuisineRequest  $request
-     * @param  \App\Models\PendingCuisine  $pendingCuisine
-     * @return \Illuminate\Http\Response
-     */
-    public function update(UpdatePendingCuisineRequest $request, PendingCuisine $pendingCuisine)
     {
         //
     }

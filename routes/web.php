@@ -1,6 +1,5 @@
 <?php
 
-use App\Http\Controllers\CuisineController;
 use App\Models\Nationality;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
@@ -33,4 +32,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::resource('cuisines', \App\Http\Controllers\CuisineController::class);
+Route::resource('pendingCuisines', \App\Http\Controllers\PendingCuisineController::class);
 Route::resource('nationalities', \App\Http\Controllers\NationalityController::class);

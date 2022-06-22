@@ -5,9 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Cuisine;
 use App\Models\Nationality;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
-use Nette\Utils\Random;
-use PhpParser\Node\Expr\FuncCall;
 
 class CuisineController extends Controller
 {
@@ -47,7 +44,7 @@ class CuisineController extends Controller
             'nameEN' => 'require',
             'description' => "nullable"
         ]);
-        $cuisine = Cuisine::create([
+        Cuisine::create([
             'nameTH' => $request->input('nameTH'),
             'nameEN' => $request->input('nameEN'),
             'nationality' => $request->input('nationality'),
