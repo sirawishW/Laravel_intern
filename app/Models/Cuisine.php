@@ -12,4 +12,12 @@ class Cuisine extends Model
     public function nationality(){
         return $this->hasMany(Nationality::class);
     }
+
+    protected $fillable = [
+        'nameEN',
+        'nameTH',
+        'nationality',
+        'description',
+        'image'
+    ];
 }

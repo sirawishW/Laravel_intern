@@ -15,7 +15,7 @@
     class="bg-image d-flex justify-content-center align-items-center"
     style="
         background-image: url('/images/food2.jpg');
-        height: 93vh;
+        height: 105vh;
     "
     >
         <div class="container-fluid">

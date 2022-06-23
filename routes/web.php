@@ -23,9 +23,12 @@ Route::get('/', function () {
 });
 
 Route::get('/cuisines/{id}', [\App\Http\Controllers\CuisineController::class, "show"]);
+Route::get('/pendingCuisines/{id}', [\App\Http\Controllers\PendingCuisineController::class, "show"]);
+
 Route::get('/random', [\App\Http\Controllers\CuisineController::class, "random"]);
 
 Route::post('/add_cuisine', [\App\Http\Controllers\PendingCuisineController::class, "store"])->name('cuisine.add');
+Route::post('/approve/{id}', [\App\Http\Controllers\PendingCuisineController::class, "approve"])->name('cuisine.approve');
 
 Auth::routes();
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Models\Nationality;
+use App\Models\PendingCuisine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -27,15 +28,20 @@ class HomeController extends Controller
     public function index()
     {
         $nationalities = Nationality::All();
-        return view('layouts.homepage' , [
-            'nationalities' => $nationalities
-        ]);
-        // $user = Auth::user();
-        // if($user->role == 'ADMIN'){
-        //     return view('admin.dashboard');
-        // }
-        // else{
-        //     return view('layouts.homepage');
-        // }
+        $pendingCuisines = PendingCuisine::All();
+        // return view('layouts.homepage' , [
+        //     'nationalities' => $nationalities
+        // ]);
+        $user = Auth::user();
+        if($user->role == 'ADMIN'){
+            return view('layouts.app', [
+                'pendingCuisines' => $pendingCuisines
+            ]);
+        }
+        else{
+            return view('layouts.homepage', [
+                'nationalities' => $nationalities
+            ]);
+        }
     }
 }

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\PendingCuisine;
-use Illuminate\Support\Facades\Validator;
+use App\Models\Cuisine;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -38,17 +38,17 @@ class PendingCuisineController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'nameEN' => 'require|string|unique',
-            'nameTH' => 'require|string|unique',
-            'description' => 'require|string|max:1000',
-            'image' => 'require'
+            'nameEN' => 'required|string',
+            'nameTH' => 'required|string',
+            'description' => 'required|string|max:1000',
+            'image' => 'required'
         ]);
         $input = $request->all();
         if($request->hasFile('image')){
             $destination_path = 'public/images/cuisines';
             $image = $request->file('image');
             $image_name = $image->getClientOriginalName();
-            $image = $request->file('image')->storeAs($destination_path, $image_name);
+            $path = $request->file('image')->storeAs($destination_path, $image_name);
 
             $input['image'] = $image_name;
         }
@@ -60,6 +60,7 @@ class PendingCuisineController extends Controller
             'description' => $input['description'],
             'image' => $input['image']
         ]);
+
         session()->flash('message', $input['nameEN']. ' successfully request.');
 
         return redirect('/home');
@@ -71,9 +72,32 @@ class PendingCuisineController extends Controller
      * @param  \App\Models\PendingCuisine  $pendingCuisine
      * @return \Illuminate\Http\Response
      */
-    public function show(PendingCuisine $pendingCuisine)
+    public function show($id)
     {
-        //
+        $pendingCuisine = PendingCuisine::findOrFail($id);
+        return view('cuisine.display-user-request-cuisine', [
+            'pendingCuisine' => $pendingCuisine
+        ]);
+    }
+
+    public function getCuisine($id)
+    {
+        $pendingCuisine = PendingCuisine::findOrFail($id);
+        return $pendingCuisine;
+    }
+
+    public function approve($id){
+        $cuisine = $this->getCuisine($id);
+        cuisine::create([
+            'nameEN' => $cuisine['nameEN'],
+            'nameTH' => $cuisine['nameTH'],
+            'nationality' => $cuisine['nationality'],
+            'description' => $cuisine['description'],
+            'image' => $cuisine['image']
+        ]);
+        PendingCuisine::destroy($id);
+
+        return redirect('/home');
     }
 
     /**

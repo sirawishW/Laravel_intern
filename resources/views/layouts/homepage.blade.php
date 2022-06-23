@@ -14,63 +14,10 @@
     @include('layouts.nav-bar')
     <div class="bg-image d-flex justify-content-center align-items-center" style="
         background-image: url('/images/food2.jpg');
-        height: 93vh;
+        height: 105vh;
     ">
         @if(Auth::user())
-        @if(Auth::user()->role == 'ADMIN')
-        <div class="container">
-            <div class="row d-flex">
-                <div class="card d-flex" style="border-radius: 0.5rem; height: 40rem;">
-                    <h1 class="pt-3 ps-2">Admin {{ Auth::user()->name }}, dashboard </h1>
-                    <div>
-                        <table class="table border-grey-200">
-                            <thead>
-                                <tr>
-                                    <th>Username</th>
-                                    <th>Name(TH)</th>
-                                    <th>Name(EN)</th>
-                                    <th>Nationality</th>
-                                    <th>Description</th>
-                                    <th>Request type</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>
-                                        Username
-                                    </td>
-                                    <td>
-                                        Name(TH)
-                                    </td>
-                                    <td>
-                                        Name(EN)
-                                    </td>
-                                    <td>
-                                        Nationality
-                                    </td>
-                                    <td>
-                                        Description
-                                    </td>
-                                    <td>
-                                        Request type
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="text-center">
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();" class="text-white">
-                            {{ __('Logout') }}
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        @else
+        @if(Auth::user()->role == 'USER')
         <div class="container-fluid">
             <div class="row d-flex ps-5">
                 <div class="card mt-2 d-flex" style="border-radius: 0.5rem; width: 30rem;">
@@ -78,12 +25,12 @@
                     <div class='fw-normal text-center pt-3' style="letter-spacing: 1px;">
                         Don't know what to eat? , let us decide it for you
                     </div>
-                    <form method="POST" action="{{ route('cuisine.add') }}">
+                    <form method="POST" action="{{ route('cuisine.add') }}" enctype='multipart/form-data'>
                         @csrf
-                        <div class="col-xs-8 col-sm-6 ms-5">
+                        <div class="form-outline col-xs-8 col-sm-6 ms-5">
                             <div class="form-outline ms-5 mb-2 mt-3">
                                 <label class="form-label" for="nameEN">Name(English)</label>
-                                <input type="text" id="nameEN" value="{{ old('nameEN') }}" class="form-inline @error('nameEN') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem;" required autocomplete="nameEN" />
+                                <input type="text" id="nameEN" name="nameEN" value="{{ old('nameEN') }}" class="form-inline @error('nameEN') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem;"/>
                                 @error('nameEN')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -92,7 +39,7 @@
                             </div>
                             <div class="form-outline ms-5 mb-2 mt-3">
                                 <label class="form-label" for="nameTH">Name(Thai)</label>
-                                <input type="text" id="nameTH" value="{{ old('nameTH') }}" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem;" required autocomplete="nameTH" />
+                                <input type="text" id="nameTH" name="nameTH" value="{{ old('nameTH') }}" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem;"/>
                                 @error('nameTH')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -101,7 +48,7 @@
                             </div>
                             <div class="form-outline ms-5 mb-2 mt-3">
                                 <label class="form-label" for="nationality">Nationality</label>
-                                <select class="form-select form-select-sm form-select-border-width: ">
+                                <select class="form-select form-select-sm form-select-border-width: " name="nationality">
                                     @foreach($nationalities as $nationality)
                                     <option value="{{ $nationality->nation }}">{{ $nationality->nation }}</option>
                                     @endforeach
@@ -109,7 +56,7 @@
                             </div>
                             <div class="form-outline ms-5 mb-2 mt-3">
                                 <label class="form-label" for="description">Description</label>
-                                <input type="text" id="description" value="{{ old('description') }}" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem; height: 5rem" required autocomplete="description" />
+                                <input type="text" id="description" name="description" value="{{ old('description') }}" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem; height: 5rem"/>
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -117,7 +64,7 @@
                                 @enderror
                             </div>
                             <div class="form-outline ms-5 mb-2 mt-3">
-                                <input type="file" id="image" name="img" accept="image/*" value="{{ old('image') }}" class="form-inline @error('image') is-invalid @enderror" required autocomplete="image">
+                                <input type="file" id="image" name="image" accept="image/*" value="{{ old('image') }}" class="form-inline @error('image') is-invalid @enderror">
                                 @error('image')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -126,9 +73,11 @@
                             </div>
                         </div>
                         <div class="d-flex align-items-center justify-content-center pt-5 pb-5 mt-auto" style="height: 50px;">
-                            <button type="button" id="allCuisineBtn" class="btn btn-dark rounded-pill" onclick="window.location.href='/cuisines'">
-                                All Menu
-                            </button>
+                            <a href="/cuisines">
+                                <button type="button" id="allCuisineBtn" class="btn btn-dark rounded-pill">
+                                    All Menu
+                                </button>
+                            </a>
                             <button type="summit" id="addBtn" class="btn btn-dark rounded-pill ms-2">
                                 Add
                             </button>
@@ -136,7 +85,7 @@
                     </form>
                 </div>
                 <div class="col-sm-9 col-md-6 col-lg-8">
-                    <div class="card mt-2 d-flex" style="border-radius: 0.5rem; width: 60rem; height: 40rem">
+                    <div class="card mt-2 d-flex" style="border-radius: 0.5rem; width: 60rem; height: 41rem">
                         <div class='fw-normal text-center pt-4' style="letter-spacing: 2px;">
                             Which menu you'll get?
                         </div>
