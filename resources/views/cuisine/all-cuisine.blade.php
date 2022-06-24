@@ -15,8 +15,8 @@
         <table class="table border-grey-200">
             <thead>
                 <tr>
-                    <th>Name(TH)</th>
                     <th>Name(EN)</th>
+                    <th>Name(TH)</th>
                     <th>Nationality</th>
                     <th>Description</th>
                 </tr>
@@ -26,12 +26,12 @@
                     <tr>
                         <td>
                             <a href="{{ route('cuisines.show', ['cuisine' => $cuisine->id]) }}" class="text-black">
-                                {{ $cuisine->nameTH }}
+                                {{ $cuisine->nameEN }}
                             </a>
                         </td>
                         <td>
                             <a href="{{ route('cuisines.show', ['cuisine' => $cuisine->id]) }}" class="text-black">
-                                {{ $cuisine->nameEN }}
+                                {{ $cuisine->nameTH }}
                             </a>
                         </td>
                         <td>

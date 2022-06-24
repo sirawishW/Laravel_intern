@@ -34,7 +34,7 @@ class HomeController extends Controller
         // ]);
         $user = Auth::user();
         if($user->role == 'ADMIN'){
-            return view('layouts.app', [
+            return view('layouts.adminpage', [
                 'pendingCuisines' => $pendingCuisines
             ]);
         }

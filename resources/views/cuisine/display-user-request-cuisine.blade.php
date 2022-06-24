@@ -15,7 +15,7 @@
     class="bg-image d-flex justify-content-center align-items-center"
     style="
         background-image: url('/images/food2.jpg');
-        height: 100vh;
+        height: 105vh;
     "
     >
         <div class="card container text-center mt-4">
@@ -29,10 +29,13 @@
                 <img src="{{ asset('storage/images/cuisines/' .$pendingCuisine->image) }}" height="360px">
             </div>
             <div class="pt-3">
-                {{ $pendingCuisine->nationality }}
+                Nationality: {{ $pendingCuisine->nationality }}
             </div>
             <div class="pt-3">
-                {{ $pendingCuisine->description }}
+                Description: {{ $pendingCuisine->description }}
+            </div>
+            <div class="pt-3">
+                Request user: {{ $pendingCuisine->user }}
             </div>
             <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
                 <a href="/home">

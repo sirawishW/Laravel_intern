@@ -90,9 +90,11 @@
                             Which menu you'll get?
                         </div>
                         <div class="d-flex align-items-center justify-content-center mt-auto" style="height: 50px;">
-                            <button type="button" id="randomBtn" class="btn btn-dark rounded-pill mb-5">
-                                <a href="/random" class="text-white" style="text-decoration:none;">Random</a>
-                            </button>
+                            <a href="/random">
+                                <button type="button" id="randomBtn" class="btn btn-dark rounded-pill mb-5">
+                                    Random
+                                </button>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -120,9 +122,11 @@
                         Which menu you'll get?
                     </div>
                     <div class="d-flex align-items-center justify-content-center mt-auto" style="height: 50px;">
-                        <button type="button" id="randomBtn" class="btn btn-dark rounded-pill mb-5">
-                            <a href="/random" class="text-white" style="text-decoration:none;">Random</a>
-                        </button>
+                        <a href="/random">
+                            <button type="button" id="randomBtn" class="btn btn-dark rounded-pill mb-5">
+                                Random
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>

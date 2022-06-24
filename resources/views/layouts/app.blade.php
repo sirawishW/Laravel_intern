@@ -1,76 +1,85 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Eatomizer</title>
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-    <script src="{{ asset('js/app.js') }}"></script>
-</head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+</head>
 <body>
-    @include('layouts.nav-bar')
-    <div class="bg-image d-flex justify-content-center align-items-center" style="
-        background-image: url('/images/food2.jpg');
-        height: 105vh;
-    ">
-        <div class="container">
-            <div class="row d-flex">
-                <div class="card d-flex" style="border-radius: 0.5rem; height: 40rem;">
-                    <h1 class="pt-3 ps-2">Admin {{ Auth::user()->name }}, dashboard </h1>
-                    <div>
-                        <table class="table border-grey-200">
-                            <thead>
-                                <tr>
-                                    <th>User</th>
-                                    <th>Name(TH)</th>
-                                    <th>Name(EN)</th>
-                                    <th>Nationality</th>
-                                    <th>Description</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            @foreach($pendingCuisines as $pendingCuisine)
-                                <tr>
-                                    <td>
-                                        {{ $pendingCuisine->user }}
-                                    </td>
-                                    <td>
-                                        <a href="{{ route('pendingCuisines.show', ['pendingCuisine' => $pendingCuisine->id]) }}" class="text-black">
-                                            {{ $pendingCuisine->nameTH }}
-                                        </a>
-                                    </td>
-                                    <td>
-                                        {{ $pendingCuisine->nameEN }}
-                                    </td>
-                                    <td>
-                                        {{ $pendingCuisine->nationality }}
-                                    </td>
-                                    <td>
-                                        {{ $pendingCuisine->description }}
-                                    </td>
-                                </tr>
-                            @endforeach
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="text-center">
-                        <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                        document.getElementById('logout-form').submit();" class="text-white">
-                            {{ __('Logout') }}
-                        </a>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                            @csrf
-                        </form>
-                    </div>
+    <div id="app">
+        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+            <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
+                    {{ config('app.name', 'Laravel') }}
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <!-- Left Side Of Navbar -->
+                    <ul class="navbar-nav me-auto">
+
+                    </ul>
+
+                    <!-- Right Side Of Navbar -->
+                    <ul class="navbar-nav ms-auto">
+                        <!-- Authentication Links -->
+                        @guest
+                        @if (Route::has('login'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                        </li>
+                        @endif
+
+                        @if (Route::has('register'))
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                        </li>
+                        @endif
+                        @else
+                        <li class="nav-item dropdown">
+                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+                                {{ Auth::user()->name }}
+                            </a>
+
+                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    {{ __('Logout') }}
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    @csrf
+                                </form>
+                            </div>
+                        </li>
+                        @endguest
+                    </ul>
                 </div>
             </div>
-        </div>
+        </nav>
+
+        <main class="py-4">
+            @yield('content')
+        </main>
     </div>
 </body>
-
 </html>
 <script>
-</script>
+</script> 

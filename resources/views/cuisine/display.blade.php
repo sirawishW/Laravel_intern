@@ -15,18 +15,18 @@
     class="bg-image d-flex justify-content-center align-items-center"
     style="
         background-image: url('/images/food2.jpg');
-        height: 93vh;
+        height: 105vh;
     "
     >
         <div class="card container text-center mt-4">
             <div>
-                <h1 class="pt-4">{{ $cuisine->nameTH }}</h1>
+                <h1 class="pt-4">{{ $cuisine->nameEN }}</h1>
             </div>
             <div>
-                <h1>{{ $cuisine->nameEN }}</h1>
+                <h1>{{ $cuisine->nameTH }}</h1>
             </div>
             <div>
-                <img src="{{ $cuisine->image }}">
+                <img src="{{ asset('storage/images/cuisines/' .$cuisine->image) }}" height="360px">
             </div>
             <div class="pt-4">
                 {{ $cuisine->description }}
@@ -38,12 +38,22 @@
                         Home
                     </button>
                 </a>
+                <a href="/cuisines">
+                    <button type="button" id="homeBtn" class="btn btn-dark rounded-pill ms-2">
+                        Back
+                    </button>
+                </a>
             </div>
             @else
             <div class="d-flex align-items-center justify-content-center" style="height: 75px;">
                 <a href="/">
                     <button type="button" id="homeBtn" class="btn btn-dark rounded-pill">
                         Home
+                    </button>
+                </a>
+                <a href="/cuisines">
+                    <button type="button" id="homeBtn" class="btn btn-dark rounded-pill ms-2">
+                        Back
                     </button>
                 </a>
             </div>
