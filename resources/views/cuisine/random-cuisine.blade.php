@@ -31,7 +31,7 @@
             <div class='fw-normal text-center pt-1'>
                 Nationality: {{ $index-> nationality}}
             </div>
-            <div class='fw-normal text-center pt-1 ps-2' >
+            <div class='fw-normal pt-1 ps-2 container' style="width: 360px;">
                 Description: {{ $index-> description}}
             </div>
             @endforeach

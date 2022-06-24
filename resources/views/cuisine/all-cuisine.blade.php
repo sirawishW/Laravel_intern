@@ -48,7 +48,7 @@
         @if (Auth::user())
         <div class="d-flex align-items-center justify-content-center">
             <a href="/home">
-                <button type="button" id="homeBtn" class="btn btn-dark rounded-pill">
+                <button type="button" id="homeBtn" class="btn btn-dark rounded-pill mb-3">
                     Home
                 </button>
             </a>
@@ -56,7 +56,7 @@
         @else
         <div class="d-flex align-items-center justify-content-center">
             <a href="/">
-                <button type="button" id="homeBtn" class="btn btn-dark rounded-pill">
+                <button type="button" id="homeBtn" class="btn btn-dark rounded-pill mb-3">
                     Home
                 </button>
             </a>
