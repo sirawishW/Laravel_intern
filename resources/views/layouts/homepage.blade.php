@@ -12,6 +12,11 @@
 
 <body>
     @include('layouts.nav-bar')
+    @if(session()->has('message'))
+    <div class="alert alert-info">
+        {{ session('message') }}
+    </div>
+    @endif
     <div class="bg-image d-flex justify-content-center align-items-center" style="
         background-image: url('/images/food2.jpg');
         height: 105vh;
@@ -30,7 +35,7 @@
                         <div class="form-outline col-xs-8 col-sm-6 ms-5">
                             <div class="form-outline ms-5 mb-2 mt-3">
                                 <label class="form-label" for="nameEN">Name(English)</label>
-                                <input type="text" id="nameEN" name="nameEN" value="{{ old('nameEN') }}" class="form-inline @error('nameEN') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem;"/>
+                                <input type="text" id="nameEN" name="nameEN" value="{{ old('nameEN') }}" class="form-inline @error('nameEN') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem;" />
                                 @error('nameEN')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -39,7 +44,7 @@
                             </div>
                             <div class="form-outline ms-5 mb-2 mt-3">
                                 <label class="form-label" for="nameTH">Name(Thai)</label>
-                                <input type="text" id="nameTH" name="nameTH" value="{{ old('nameTH') }}" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem;"/>
+                                <input type="text" id="nameTH" name="nameTH" value="{{ old('nameTH') }}" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem;" />
                                 @error('nameTH')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -56,7 +61,7 @@
                             </div>
                             <div class="form-outline ms-5 mb-2 mt-3">
                                 <label class="form-label" for="description">Description</label>
-                                <input type="text" id="description" name="description" value="{{ old('description') }}" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem; height: 5rem"/>
+                                <input type="text" id="description" name="description" value="{{ old('description') }}" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem; height: 5rem" />
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -98,6 +103,16 @@
                         </div>
                     </div>
                 </div>
+                @if(session()->has('message'))
+                <div class="toast align-items-center text-white bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                        <div class="toast-body">
+                            session('message')
+                        </div>
+                        <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                </div>
+                @endif
             </div>
         </div>
     </div>
@@ -137,5 +152,3 @@
 </body>
 
 </html>
-<script>
-</script>

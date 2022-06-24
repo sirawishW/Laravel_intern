@@ -18,18 +18,19 @@
         height: 105vh;
     "
     >
-        <div class="card container text-center mt-4">
-            <div>
-                <h1 class="pt-4">{{ $cuisine->nameEN }}</h1>
+        <div class="card" style="width:auto">
+            <div class="text-center text-uppercase pt-2">
+                <h4>{{ $cuisine->nameEN }}</h4>
             </div>
-            <div>
-                <h1>{{ $cuisine->nameTH }}</h1>
+            <div class="text-center pb-2">
+                <h5>{{ $cuisine->nameTH }}</h5>
             </div>
-            <div>
-                <img src="{{ asset('storage/images/cuisines/' .$cuisine->image) }}" height="360px">
+            <img class="card-img-top" src="{{ asset('storage/images/cuisines/' .$cuisine->image) }}" height="360px">
+            <div class="pt-3 text-center">
+                Nationality: {{ $cuisine->nationality }}
             </div>
-            <div class="pt-4">
-                {{ $cuisine->description }}
+            <div class="pt-3 container" style="width: 360px;">
+                Description: {{ $cuisine->description }}
             </div>
             @if(Auth::user())
             <div class="d-flex align-items-center justify-content-center" style="height: 75px;">

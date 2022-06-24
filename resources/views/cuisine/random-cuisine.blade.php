@@ -18,20 +18,20 @@
     ">
         <div class="card" style="width:auto">
             @foreach($random as $index)
-            <div class='fw-normal text-center pt-1' style="letter-spacing: 2px;">
+            <div class='fw-normal text-center text-uppercase pt-1' style="letter-spacing: 2px;">
                 This is your menu
             </div>
             <img class="card-img-top" src="{{ asset('storage/images/cuisines/' .$index->image) }}" style="height: 360px;" alt="Image">
-            <div class='fw-normal text-center pt-2'>
-                {{ $index->nameEN }}
+            <div class='fw-normal text-center text-uppercase pt-3'>
+                <h4>{{ $index->nameEN }}</h4>
             </div>
             <div class='fw-normal text-center pt-1'>
-                {{ $index-> nameTH }}
+                <h5>{{ $index-> nameTH }}</h5>
             </div>
             <div class='fw-normal text-center pt-1'>
                 Nationality: {{ $index-> nationality}}
             </div>
-            <div class='fw-normal pt-1 ps-2 container' style="width: 360px;">
+            <div class='fw-normal pt-2 ps-2 container' style="width: 360px;">
                 Description: {{ $index-> description}}
             </div>
             @endforeach

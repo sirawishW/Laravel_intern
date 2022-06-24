@@ -29,6 +29,7 @@ Route::get('/random', [\App\Http\Controllers\CuisineController::class, "random"]
 
 Route::post('/add_cuisine', [\App\Http\Controllers\PendingCuisineController::class, "store"])->name('cuisine.add');
 Route::post('/approve/{id}', [\App\Http\Controllers\PendingCuisineController::class, "approve"])->name('cuisine.approve');
+Route::post('/approve/{id}/delete', [\App\Http\Controllers\PendingCuisineController::class, "destroy"])->name('cuisine.decline');
 
 Auth::routes();
 

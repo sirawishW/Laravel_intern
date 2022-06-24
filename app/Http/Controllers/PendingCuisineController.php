@@ -61,9 +61,7 @@ class PendingCuisineController extends Controller
             'image' => $input['image']
         ]);
 
-        session()->flash('message', $input['nameEN']. ' successfully request.');
-
-        return redirect('/home');
+        return redirect('/home')->with(['message' => 'Request successfully']);
     }
 
     /**
@@ -97,7 +95,7 @@ class PendingCuisineController extends Controller
         ]);
         PendingCuisine::destroy($id);
 
-        return redirect('/home');
+        return redirect('/home')->with(['message' => 'Approve successfully']);
     }
 
     /**
@@ -117,8 +115,10 @@ class PendingCuisineController extends Controller
      * @param  \App\Models\PendingCuisine  $pendingCuisine
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PendingCuisine $pendingCuisine)
+    public function destroy($id)
     {
-        //
+        PendingCuisine::destroy($id);
+
+        return redirect('/home')->with(['message' => 'Decline successfully']);
     }
 }

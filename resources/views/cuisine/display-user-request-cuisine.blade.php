@@ -20,10 +20,10 @@
     >
         <div class="card container text-center mt-4">
             <div>
-                <h1 class="pt-4">{{ $pendingCuisine->nameEN }}</h1>
+                <h4 class="pt-4">{{ $pendingCuisine->nameEN }}</h4>
             </div>
             <div>
-                <h1>{{ $pendingCuisine->nameTH }}</h1>
+                <h5>{{ $pendingCuisine->nameTH }}</h5>
             </div>
             <div>
                 <img src="{{ asset('storage/images/cuisines/' .$pendingCuisine->image) }}" height="360px">
@@ -45,8 +45,14 @@
                 </a>
                 <form method="POST" action="{{ route('cuisine.approve', $pendingCuisine->id) }}">
                     @csrf
-                    <button type="summit" id="homeBtn" class="btn btn-dark rounded-pill ms-2">
+                    <button type="summit" id="approveBtn" class="btn btn-success rounded-pill ms-2">
                         Approve
+                    </button>
+                </form>
+                <form method="POST" action="{{ route('cuisine.decline', $pendingCuisine->id) }}">
+                    @csrf
+                    <button type="summit" id="declineBtn" class="btn btn-danger rounded-pill ms-2">
+                        Decline
                     </button>
                 </form>
             </div>
