@@ -61,7 +61,7 @@ class PendingCuisineController extends Controller
             'image' => $input['image']
         ]);
 
-        return redirect('/home')->with(['message' => 'Request successfully']);
+        return redirect('/home')->with(['message' => 'Request to add menu success']);
     }
 
     /**
@@ -95,7 +95,7 @@ class PendingCuisineController extends Controller
         ]);
         PendingCuisine::destroy($id);
 
-        return redirect('/home')->with(['message' => 'Approve successfully']);
+        return redirect('/home')->with(['message' => 'Successfully Approve']);
     }
 
     /**
@@ -119,6 +119,6 @@ class PendingCuisineController extends Controller
     {
         PendingCuisine::destroy($id);
 
-        return redirect('/home')->with(['message' => 'Decline successfully']);
+        return redirect('/home')->with(['message' => 'Successfully Decline']);
     }
 }

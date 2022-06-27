@@ -12,6 +12,12 @@
 
 <body>
     @include('layouts.nav-bar')
+    @if(session()->has('message'))
+    <div class="alert alert-success alert-dismissible fade show position-absolute end-0">
+        {{ session('message') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    @endif
     <div class="bg-image d-flex justify-content-center align-items-center" style="
         background-image: url('/images/food2.jpg');
         height: 105vh;

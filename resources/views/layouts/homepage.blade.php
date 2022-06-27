@@ -13,8 +13,9 @@
 <body>
     @include('layouts.nav-bar')
     @if(session()->has('message'))
-    <div class="alert alert-info">
+    <div class="alert alert-success alert-dismissible fade show position-absolute end-0">
         {{ session('message') }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
     </div>
     @endif
     <div class="bg-image d-flex justify-content-center align-items-center" style="
@@ -115,40 +116,39 @@
                 @endif
             </div>
         </div>
-    </div>
-    @endif
-    @else
-    <div class="container-fluid">
-        <div class="row d-flex ps-5">
-            <div class="card mt-2 d-flex" style="border-radius: 0.5rem; width: 30rem;">
-                <h1 class='container text-center pt-5 fw-bold'>Eatomizer</h1>
-                <div class='fw-normal text-center pt-3' style="letter-spacing: 1px;">
-                    Don't know what to eat? , let us decide it for you
-                </div>
-                <div class="d-flex align-items-center justify-content-center pt-5 pb-5 mt-auto" style="height: 50px;">
-                    <button type="button" id="allCuisineBtn" class="btn btn-dark rounded-pill" onclick="window.location.href='/cuisines'">
-                        All Menu
-                    </button>
-                </div>
-            </div>
-            <div class="col-sm-9 col-md-6 col-lg-8">
-                <div class="card mt-2 d-flex" style="border-radius: 0.5rem; width: 60rem; height: 40rem">
-                    <div class='fw-normal text-center pt-4' style="letter-spacing: 2px;">
-                        Which menu you'll get?
+        @endif
+        @else
+        <div class="container-fluid">
+            <div class="row d-flex ps-5">
+                <div class="card mt-2 d-flex" style="border-radius: 0.5rem; width: 30rem;">
+                    <h1 class='container text-center pt-5 fw-bold'>Eatomizer</h1>
+                    <div class='fw-normal text-center pt-3' style="letter-spacing: 1px;">
+                        Don't know what to eat? , let us decide it for you
                     </div>
-                    <div class="d-flex align-items-center justify-content-center mt-auto" style="height: 50px;">
-                        <a href="/random">
-                            <button type="button" id="randomBtn" class="btn btn-dark rounded-pill mb-5">
-                                Random
-                            </button>
-                        </a>
+                    <div class="d-flex align-items-center justify-content-center pt-5 pb-5 mt-auto" style="height: 50px;">
+                        <button type="button" id="allCuisineBtn" class="btn btn-dark rounded-pill" onclick="window.location.href='/cuisines'">
+                            All Menu
+                        </button>
+                    </div>
+                </div>
+                <div class="col-sm-9 col-md-6 col-lg-8">
+                    <div class="card mt-2 d-flex" style="border-radius: 0.5rem; width: 60rem; height: 40rem">
+                        <div class='fw-normal text-center pt-4' style="letter-spacing: 2px;">
+                            Which menu you'll get?
+                        </div>
+                        <div class="d-flex align-items-center justify-content-center mt-auto" style="height: 50px;">
+                            <a href="/random">
+                                <button type="button" id="randomBtn" class="btn btn-dark rounded-pill mb-5">
+                                    Random
+                                </button>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        @endif
     </div>
-    </div>
-    @endif
 </body>
 
 </html>
