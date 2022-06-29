@@ -64,11 +64,11 @@ class CuisineController extends Controller
      */
     public function edit($id, $cuisine)
     {
-        $cuisines = Cuisine::findOrFail($id);
-        $cuisines->nameTH = $cuisine->nameTH;
-        $cuisines->nameEN = $cuisine->nameEN;
-        $cuisines->nationality = $cuisine->nationality;
-        $cuisines->description = $cuisine->description;
+        // $cuisines = Cuisine::findOrFail($id);
+        // $cuisines->nameTH = $cuisine->nameTH;
+        // $cuisines->nameEN = $cuisine->nameEN;
+        // $cuisines->nationality = $cuisine->nationality;
+        // $cuisines->description = $cuisine->description;
     }
 
     /**
@@ -101,6 +101,16 @@ class CuisineController extends Controller
         return view('cuisine.random-cuisine', [
             'random' => $random,
             'nationalities' => $nationalities
+        ]);
+    }
+
+    //Search cuisine
+    public function search(Request $request){
+        $search_text = $request->get('query');
+        $searchCuisines = Cuisine::where('nameEN', 'LIKE', '%'.$search_text.'%')->get();
+
+        return view('cuisine.all-cuisine-search', [
+            'searchCuisines' => $searchCuisines
         ]);
     }
 }

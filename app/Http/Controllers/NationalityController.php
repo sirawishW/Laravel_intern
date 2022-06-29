@@ -119,11 +119,11 @@ class NationalityController extends Controller
         }   
     }
 
-    public function searchNationality(Request $request)
-    {
-        $nationalities = Nationality::get();
-        if (!empty($request->slug))
-            $nationalities = Nationality::where('name', "Like", "%" . $request->slug . "%")->get();
-        return $nationalities;
-    }
+    // public function searchNationality(Request $request)
+    // {
+    //     $nationalities = Nationality::get();
+    //     if (!empty($request->slug))
+    //         $nationalities = Nationality::where('name', "Like", "%" . $request->slug . "%")->get();
+    //     return $nationalities;
+    // }
 }

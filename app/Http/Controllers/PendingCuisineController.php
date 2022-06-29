@@ -121,4 +121,13 @@ class PendingCuisineController extends Controller
 
         return redirect('/home')->with(['message' => 'Successfully Decline']);
     }
+
+    public function search(Request $request){
+        $search_text = $request->get('query');
+        $searchCuisines = PendingCuisine::where('user', 'LIKE', '%'.$search_text.'%')->get();
+
+        return view('layouts.adminpagesearch', [
+            'searchCuisines' => $searchCuisines
+        ]);
+    }
 }

@@ -62,7 +62,7 @@
                             </div>
                             <div class="form-outline ms-5 mb-2 mt-3">
                                 <label class="form-label" for="description">Description</label>
-                                <input type="text" id="description" name="description" value="{{ old('description') }}" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem; height: 5rem" />
+                                <textarea type="text" id="description" name="description" value="{{ old('description') }}" class="form-inline @error('nameTH') is-invalid @enderror" style="border-radius: 0.5rem; width: 15rem; height: 5rem; overflow:auto;resize:none"></textarea>
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

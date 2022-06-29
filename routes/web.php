@@ -26,6 +26,8 @@ Route::get('/cuisines/{id}', [\App\Http\Controllers\CuisineController::class, "s
 Route::get('/pendingCuisines/{id}', [\App\Http\Controllers\PendingCuisineController::class, "show"]);
 
 Route::get('/random', [\App\Http\Controllers\CuisineController::class, "random"]);
+Route::get('/searchPending', [\App\Http\Controllers\PendingCuisineController::class, "search"]);
+Route::get('/searchCuisine', [\App\Http\Controllers\CuisineController::class, "search"]);
 
 Route::post('/add_cuisine', [\App\Http\Controllers\PendingCuisineController::class, "store"])->name('cuisine.add');
 Route::post('/approve/{id}', [\App\Http\Controllers\PendingCuisineController::class, "approve"])->name('cuisine.approve');

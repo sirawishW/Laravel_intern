@@ -26,7 +26,7 @@ class HomepageTest extends TestCase
         $this->seed();
  
         $this->post('/login', [
-            'username' => 'petchyparaa',
+            'username' => 'admin',
             'password' => 'adminpass',
         ]);
  

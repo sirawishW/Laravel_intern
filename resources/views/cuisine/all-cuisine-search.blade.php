@@ -28,23 +28,23 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach($cuisines as $cuisine)
+                @foreach($searchCuisines as $searchCuisine)
                     <tr>
                         <td>
-                            <a href="{{ route('cuisines.show', ['cuisine' => $cuisine->id]) }}" class="text-black">
-                                {{ $cuisine->nameEN }}
+                            <a href="{{ route('cuisines.show', $searchCuisine->id) }}" class="text-black">
+                                {{ $searchCuisine->nameEN }}
                             </a>
                         </td>
                         <td>
-                            <a href="{{ route('cuisines.show', ['cuisine' => $cuisine->id]) }}" class="text-black">
-                                {{ $cuisine->nameTH }}
+                            <a href="{{ route('cuisines.show', $searchCuisine->id) }}" class="text-black">
+                                {{ $searchCuisine->nameTH }}
                             </a>
                         </td>
                         <td>
-                            {{ $cuisine->nationality }}
+                            {{ $searchCuisine->nationality }}
                         </td>
                         <td>
-                            {{ $cuisine->description }}
+                            {{ $searchCuisine->description }}
                         </td>
                     </tr>
                 @endforeach
