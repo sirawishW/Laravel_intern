@@ -6,16 +6,19 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
-class UserTest extends TestCase
+class RandomCuisineTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * A basic feature test example.
      *
      * @return void
      */
-    public function test_example()
+    public function test_random_cuisine()
     {
-        $response = $this->get('/');
+        $this->seed();
+
+        $response = $this->get('/random');
 
         $response->assertStatus(200);
     }

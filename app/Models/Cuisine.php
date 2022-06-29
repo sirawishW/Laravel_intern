@@ -9,10 +9,6 @@ class Cuisine extends Model
 {
     use HasFactory;
 
-    public function nationality(){
-        return $this->hasMany(Nationality::class);
-    }
-
     protected $fillable = [
         'nameEN',
         'nameTH',

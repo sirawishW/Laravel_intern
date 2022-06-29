@@ -20,7 +20,7 @@ class AdminDeclineCuisineTest extends TestCase
         $user = User::factory()->create();
  
         $this->seed();
-        
+
         $this->post('/login', [
             'username' => $user->username,
             'password' => 'password',
@@ -39,6 +39,8 @@ class AdminDeclineCuisineTest extends TestCase
 
         $this->post('/logout');
 
+        $this->assertGuest();
+
         $this->post('/login', [
             'username' => 'petchyparaa',
             'password' => 'adminpass',
@@ -46,8 +48,10 @@ class AdminDeclineCuisineTest extends TestCase
 
         $this->assertAuthenticated();
 
-        $response = $this->post('/decline/{1}');
+        $response = $this->post('/decline/1');
 
         $response->assertRedirect(RouteServiceProvider::HOME);
+
+
     }
 }

@@ -18,9 +18,9 @@ class AdminApproveCuisineTest extends TestCase
     public function test_admin_approve_cuisine()
     {
         $user = User::factory()->create();
-
-        $this->seed();
  
+        $this->seed();
+
         $this->post('/login', [
             'username' => $user->username,
             'password' => 'password',
@@ -39,6 +39,8 @@ class AdminApproveCuisineTest extends TestCase
 
         $this->post('/logout');
 
+        $this->assertGuest();
+
         $this->post('/login', [
             'username' => 'petchyparaa',
             'password' => 'adminpass',
@@ -46,7 +48,7 @@ class AdminApproveCuisineTest extends TestCase
 
         $this->assertAuthenticated();
 
-        $response = $this->post('/approve/{1}');
+        $response = $this->post('/approve/1');
 
         $response->assertRedirect(RouteServiceProvider::HOME);
     }
