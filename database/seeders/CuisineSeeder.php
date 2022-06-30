@@ -14,6 +14,6 @@ class CuisineSeeder extends Seeder
      */
     public function run()
     {
-        Cuisine::factory(10)->create();
+        // Cuisine::factory(10)->create();
     }
 }

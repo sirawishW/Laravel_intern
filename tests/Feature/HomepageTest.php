@@ -2,6 +2,8 @@
 
 namespace Tests\Feature;
 
+use App\Http\Controllers\NationalityController;
+use App\Models\Nationality;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use App\Models\User;
@@ -51,5 +53,12 @@ class HomepageTest extends TestCase
         $response = $this->get('/home');
 
         $response->assertStatus(200);
+    }
+
+    public function test_guess_not_login()
+    {
+        $response = $this->get('/home');
+
+        $response->assertRedirect('/login');
     }
 }

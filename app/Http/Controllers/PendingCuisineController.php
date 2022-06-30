@@ -78,15 +78,9 @@ class PendingCuisineController extends Controller
         ]);
     }
 
-    public function getCuisine($id)
-    {
-        $pendingCuisine = PendingCuisine::findOrFail($id);
-        return $pendingCuisine;
-    }
-
     public function approve($id){
-        $cuisine = $this->getCuisine($id);
-        cuisine::create([
+        $cuisine = PendingCuisine::findOrFail($id);
+        Cuisine::create([
             'nameEN' => $cuisine['nameEN'],
             'nameTH' => $cuisine['nameTH'],
             'nationality' => $cuisine['nationality'],
@@ -117,7 +111,9 @@ class PendingCuisineController extends Controller
      */
     public function destroy($id)
     {
-        PendingCuisine::destroy($id);
+        $cuisine = PendingCuisine::findOrFail($id);
+
+        PendingCuisine::destroy($cuisine->id);
 
         return redirect('/home')->with(['message' => 'Successfully Decline']);
     }

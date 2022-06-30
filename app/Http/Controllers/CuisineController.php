@@ -64,11 +64,7 @@ class CuisineController extends Controller
      */
     public function edit($id, $cuisine)
     {
-        // $cuisines = Cuisine::findOrFail($id);
-        // $cuisines->nameTH = $cuisine->nameTH;
-        // $cuisines->nameEN = $cuisine->nameEN;
-        // $cuisines->nationality = $cuisine->nationality;
-        // $cuisines->description = $cuisine->description;
+        //
     }
 
     /**

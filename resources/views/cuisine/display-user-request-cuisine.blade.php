@@ -18,23 +18,23 @@
         height: 105vh;
     "
     >
-        <div class="card container text-center mt-4">
-            <div>
-                <h4 class="pt-4">{{ $pendingCuisine->nameEN }}</h4>
+        <div class="card" style="width:auto">
+            <div class="fw-normal text-center text-uppercase pt-1">
+                <h4>{{ $pendingCuisine->nameEN }}</h4>
             </div>
-            <div>
+            <div class='fw-normal text-center pt-1'>
                 <h5>{{ $pendingCuisine->nameTH }}</h5>
             </div>
             <div>
                 <img src="{{ asset('storage/images/cuisines/' .$pendingCuisine->image) }}" height="360px">
             </div>
-            <div class="pt-3">
+            <div class='fw-normal text-center pt-2'>
                 Nationality: {{ $pendingCuisine->nationality }}
             </div>
-            <div class="pt-3">
+            <div class='fw-normal pt-2 ps-2 container' style="width: 360px;">
                 Description: {{ $pendingCuisine->description }}
             </div>
-            <div class="pt-3">
+            <div class='fw-normal text-center pt-2'>
                 Request user: {{ $pendingCuisine->user }}
             </div>
             <div class="d-flex align-items-center justify-content-center" style="height: 75px;">

@@ -26,14 +26,18 @@
             <div class="row d-flex">
                 <div class="card d-flex" style="border-radius: 0.5rem; height: 40rem;">
                     <div>
-                        <h1 class="pt-3 ps-2">Admin {{ Auth::user()->name }}, dashboard </h1>
+                        <h2 class="pt-3 ps-2">Admin {{ Auth::user()->name }}, dashboard </h2>
                          <div class="form-outline mt-3 mb-3 ps-2">
                             <form method="GET" action="/searchPending">
                                 <input type="search" name="query" placeholder="Search User here" style="border-radius: 0.5rem; width: 15rem; height: 2.5rem">
                                 <button value="summit" class="btn btn-dark rounded-pill ms-2">search</button>
+                                <a href="/cuisines">
+                                    <button type="button" id="allCuisineBtn" class="btn btn-dark rounded-pill ms-2">
+                                        All Menu
+                                    </button>
+                                </a>
                             </form>
                         </div>
-                    </div>
                     <div>
                         <table class="table border-grey-200">
                             <thead>

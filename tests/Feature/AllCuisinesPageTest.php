@@ -23,13 +23,6 @@ class AllCuisinesPageTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function test_cuisine_detail_page()
-    {
-        $response = $this->get('/cuisines/1');
-
-        $response->assertStatus(200);
-    }
-
     public function test_search_cuisine()
     {
         $response = $this->get('/searchCuisine');

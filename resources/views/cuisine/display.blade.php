@@ -40,7 +40,7 @@
                     </button>
                 </a>
                 <a href="/cuisines">
-                    <button type="button" id="homeBtn" class="btn btn-dark rounded-pill ms-2">
+                    <button type="button" id="backBtn" class="btn btn-dark rounded-pill ms-2">
                         Back
                     </button>
                 </a>
@@ -53,7 +53,7 @@
                     </button>
                 </a>
                 <a href="/cuisines">
-                    <button type="button" id="homeBtn" class="btn btn-dark rounded-pill ms-2">
+                    <button type="button" id="backBtn" class="btn btn-dark rounded-pill ms-2">
                         Back
                     </button>
                 </a>
